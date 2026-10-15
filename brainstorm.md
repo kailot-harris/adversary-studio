@@ -22,6 +22,36 @@ edge/orientation filters (`gabor_grating`).
 ## Face/landmark-specific
 - `face_mesh_scramble` — denser landmark-confusion version of `pose_jammer`, targeting 68-point face mesh models specifically rather than full-body pose
 
+## Detection/recognition confusion (advanced)
+- `anchor_box_flood` — dense grids of high-confidence-looking rectangles at classic anchor-box aspect ratios (1:1, 1:2, 2:1) to overload NMS/anchor-matching in detectors like YOLO/SSD
+- `license_plate_ghost` — overlapping fake plate-glyph rectangles with mismatched check-digit patterns to confuse ANPR systems
+- `reid_camouflage` — repeating color-blocked torso/clothing patterns engineered to collide with person re-identification embedding space
+- `saliency_inversion` — high-frequency textures designed to make background regions score higher than foreground on saliency/attention maps
+
+## Biometric/liveness attacks
+- `iris_code_jam` — radial Gabor-like ring patterns mimicking iris-code texture to confuse iris recognition
+- `liveness_spoof_texture` — print/screen moiré + specular-highlight patterns tuned to fool anti-spoofing liveness classifiers
+- `gait_scramble` — overlaid skeletal stick-figure fragments with contradictory joint-angle phase to disrupt gait-recognition silhouettes
+
+## Compression/codec-level
+- `jpeg_dct_bloom` — block-aligned 8x8 DCT-coefficient-mimicking patterns tuned to trigger exaggerated quantization artifacts
+- `rolling_shutter_tear` — diagonal shear-banding simulating rolling-shutter skew to confuse frame-alignment/stabilization algorithms
+- `codec_macroblock_decoy` — fake motion-compensation block boundaries that look like compression artifacts to confuse deepfake/tamper detectors
+
+## 3D/geometric reconstruction
+- `nerf_view_inconsistency` — view-dependent specular/color patches that look plausible from one angle but break multi-view photometric consistency (for NeRF/SfM pipelines)
+- `point_cloud_static` — dot-grid density fields mimicking LiDAR return noise/dropout patterns
+- `slam_feature_desert` — regions deliberately stripped of repeatable corner/edge features (flat gradients) interleaved with false high-contrast keypoint clusters, to starve or flood SLAM feature matchers
+
+## Forensics/generative-detection
+- `gan_fingerprint_mask` — periodic high-frequency grid noise mimicking GAN upsampling checkerboard artifacts, to confuse AI-generated-image detectors
+- `steganalysis_noise_bed` — LSB-plane-style structured noise mimicking steganographic payload statistics
+- `watermark_collision` — semi-transparent repeating glyph/pattern tuned to collide with common invisible-watermark detection frequencies
+
+## Temporal/motion
+- `crowd_count_decoy` — clustered blob patterns at typical "head detector" scale/density to inflate or deflate crowd-counting estimates
+- `action_recognition_jitter` — looped contradictory limb-silhouette sequences (single frame, implied motion via blur trails) to confuse action-recognition temporal pooling
+
 ## Status
 - [x] `fgsm_noise` — built
 - [x] `moire_interference` — built
@@ -32,3 +62,21 @@ edge/orientation filters (`gabor_grating`).
 - [x] `thermal_decoy` — built
 - [ ] `ocr_glitch`
 - [ ] `face_mesh_scramble`
+- [ ] `anchor_box_flood`
+- [ ] `license_plate_ghost`
+- [ ] `reid_camouflage`
+- [ ] `saliency_inversion`
+- [ ] `iris_code_jam`
+- [ ] `liveness_spoof_texture`
+- [ ] `gait_scramble`
+- [ ] `jpeg_dct_bloom`
+- [ ] `rolling_shutter_tear`
+- [ ] `codec_macroblock_decoy`
+- [ ] `nerf_view_inconsistency`
+- [ ] `point_cloud_static`
+- [ ] `slam_feature_desert`
+- [ ] `gan_fingerprint_mask`
+- [ ] `steganalysis_noise_bed`
+- [ ] `watermark_collision`
+- [ ] `crowd_count_decoy`
+- [ ] `action_recognition_jitter`
