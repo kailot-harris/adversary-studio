@@ -21,7 +21,8 @@ export type EngineId =
   | "saliency_inversion"
   | "iris_code_jam"
   | "liveness_spoof_texture"
-  | "gait_scramble";
+  | "gait_scramble"
+  | "jpeg_dct_bloom";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
