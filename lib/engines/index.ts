@@ -10,6 +10,7 @@ import { segmentationShatter } from "./segmentationShatter";
 import { fiducialMimic } from "./fiducialMimic";
 import { depthSpoof } from "./depthSpoof";
 import { thermalDecoy } from "./thermalDecoy";
+import { licensePlateGhost } from "./licensePlateGhost";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -25,6 +26,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   fiducial_mimic: fiducialMimic,
   depth_spoof: depthSpoof,
   thermal_decoy: thermalDecoy,
+  license_plate_ghost: licensePlateGhost,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -40,6 +42,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "fiducial_mimic",
   "depth_spoof",
   "thermal_decoy",
+  "license_plate_ghost",
 ];
 
 export * from "./types";

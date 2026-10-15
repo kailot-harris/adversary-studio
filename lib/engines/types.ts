@@ -12,7 +12,8 @@ export type EngineId =
   | "segmentation_shatter"
   | "fiducial_mimic"
   | "depth_spoof"
-  | "thermal_decoy";
+  | "thermal_decoy"
+  | "license_plate_ghost";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

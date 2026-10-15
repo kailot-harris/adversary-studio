@@ -63,7 +63,7 @@ edge/orientation filters (`gabor_grating`).
 - [ ] `ocr_glitch`
 - [ ] `face_mesh_scramble`
 - [ ] `anchor_box_flood`
-- [ ] `license_plate_ghost`
+- [x] `license_plate_ghost` — built
 - [ ] `reid_camouflage`
 - [ ] `saliency_inversion`
 - [ ] `iris_code_jam`
