@@ -21,6 +21,7 @@ const ENGINE_IDS: EngineId[] = [
   "segmentation_shatter",
   "fiducial_mimic",
   "depth_spoof",
+  "thermal_decoy",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

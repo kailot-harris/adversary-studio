@@ -11,7 +11,8 @@ export type EngineId =
   | "optical_flow_jammer"
   | "segmentation_shatter"
   | "fiducial_mimic"
-  | "depth_spoof";
+  | "depth_spoof"
+  | "thermal_decoy";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
