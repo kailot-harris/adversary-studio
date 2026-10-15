@@ -27,7 +27,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `moire_interference` — built
 - [x] `optical_flow_jammer` — built
 - [x] `segmentation_shatter` — built
-- [ ] `fiducial_mimic`
+- [x] `fiducial_mimic` — built
 - [ ] `depth_spoof`
 - [ ] `thermal_decoy`
 - [ ] `ocr_glitch`
