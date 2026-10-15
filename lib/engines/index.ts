@@ -5,6 +5,7 @@ import { poseJammer } from "./poseJammer";
 import { gaborGrating } from "./gaborGrating";
 import { fgsmNoise } from "./fgsmNoise";
 import { moireInterference } from "./moireInterference";
+import { opticalFlowJammer } from "./opticalFlowJammer";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -15,6 +16,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   gabor_grating: gaborGrating,
   fgsm_noise: fgsmNoise,
   moire_interference: moireInterference,
+  optical_flow_jammer: opticalFlowJammer,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -25,6 +27,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "gabor_grating",
   "fgsm_noise",
   "moire_interference",
+  "optical_flow_jammer",
 ];
 
 export * from "./types";
