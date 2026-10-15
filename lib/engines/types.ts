@@ -23,7 +23,8 @@ export type EngineId =
   | "liveness_spoof_texture"
   | "gait_scramble"
   | "jpeg_dct_bloom"
-  | "rolling_shutter_tear";
+  | "rolling_shutter_tear"
+  | "codec_macroblock_decoy";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

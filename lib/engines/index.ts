@@ -21,6 +21,7 @@ import { livenessSpoofTexture } from "./livenessSpoofTexture";
 import { gaitScramble } from "./gaitScramble";
 import { jpegDctBloom } from "./jpegDctBloom";
 import { rollingShutterTear } from "./rollingShutterTear";
+import { codecMacroblockDecoy } from "./codecMacroblockDecoy";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -47,6 +48,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   gait_scramble: gaitScramble,
   jpeg_dct_bloom: jpegDctBloom,
   rolling_shutter_tear: rollingShutterTear,
+  codec_macroblock_decoy: codecMacroblockDecoy,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -73,6 +75,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "gait_scramble",
   "jpeg_dct_bloom",
   "rolling_shutter_tear",
+  "codec_macroblock_decoy",
 ];
 
 export * from "./types";

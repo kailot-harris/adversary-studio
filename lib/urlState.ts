@@ -33,6 +33,7 @@ const ENGINE_IDS: EngineId[] = [
   "gait_scramble",
   "jpeg_dct_bloom",
   "rolling_shutter_tear",
+  "codec_macroblock_decoy",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
