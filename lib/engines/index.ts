@@ -11,6 +11,7 @@ import { fiducialMimic } from "./fiducialMimic";
 import { depthSpoof } from "./depthSpoof";
 import { thermalDecoy } from "./thermalDecoy";
 import { ocrGlitch } from "./ocrGlitch";
+import { faceMeshScramble } from "./faceMeshScramble";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -27,6 +28,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   depth_spoof: depthSpoof,
   thermal_decoy: thermalDecoy,
   ocr_glitch: ocrGlitch,
+  face_mesh_scramble: faceMeshScramble,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -43,6 +45,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "depth_spoof",
   "thermal_decoy",
   "ocr_glitch",
+  "face_mesh_scramble",
 ];
 
 export * from "./types";

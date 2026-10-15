@@ -13,7 +13,8 @@ export type EngineId =
   | "fiducial_mimic"
   | "depth_spoof"
   | "thermal_decoy"
-  | "ocr_glitch";
+  | "ocr_glitch"
+  | "face_mesh_scramble";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
