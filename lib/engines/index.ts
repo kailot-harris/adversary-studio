@@ -15,6 +15,7 @@ import { faceMeshScramble } from "./faceMeshScramble";
 import { anchorBoxFlood } from "./anchorBoxFlood";
 import { licensePlateGhost } from "./licensePlateGhost";
 import { reidCamouflage } from "./reidCamouflage";
+import { gaitScramble } from "./gaitScramble";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -35,6 +36,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   anchor_box_flood: anchorBoxFlood,
   license_plate_ghost: licensePlateGhost,
   reid_camouflage: reidCamouflage,
+  gait_scramble: gaitScramble,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -55,6 +57,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "anchor_box_flood",
   "license_plate_ghost",
   "reid_camouflage",
+  "gait_scramble",
 ];
 
 export * from "./types";
