@@ -67,7 +67,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `reid_camouflage` — built
 - [ ] `saliency_inversion`
 - [ ] `iris_code_jam`
-- [ ] `liveness_spoof_texture`
+- [x] `liveness_spoof_texture` — built
 - [ ] `gait_scramble`
 - [ ] `jpeg_dct_bloom`
 - [ ] `rolling_shutter_tear`

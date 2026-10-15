@@ -27,6 +27,7 @@ const ENGINE_IDS: EngineId[] = [
   "anchor_box_flood",
   "license_plate_ghost",
   "reid_camouflage",
+  "liveness_spoof_texture",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
