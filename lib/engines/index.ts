@@ -18,6 +18,7 @@ import { reidCamouflage } from "./reidCamouflage";
 import { saliencyInversion } from "./saliencyInversion";
 import { irisCodeJam } from "./irisCodeJam";
 import { livenessSpoofTexture } from "./livenessSpoofTexture";
+import { gaitScramble } from "./gaitScramble";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -41,6 +42,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   saliency_inversion: saliencyInversion,
   iris_code_jam: irisCodeJam,
   liveness_spoof_texture: livenessSpoofTexture,
+  gait_scramble: gaitScramble,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -64,6 +66,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "saliency_inversion",
   "iris_code_jam",
   "liveness_spoof_texture",
+  "gait_scramble",
 ];
 
 export * from "./types";
