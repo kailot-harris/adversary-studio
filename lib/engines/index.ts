@@ -23,6 +23,7 @@ import { jpegDctBloom } from "./jpegDctBloom";
 import { rollingShutterTear } from "./rollingShutterTear";
 import { codecMacroblockDecoy } from "./codecMacroblockDecoy";
 import { nerfViewInconsistency } from "./nerfViewInconsistency";
+import { ganFingerprintMask } from "./ganFingerprintMask";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -51,6 +52,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   rolling_shutter_tear: rollingShutterTear,
   codec_macroblock_decoy: codecMacroblockDecoy,
   nerf_view_inconsistency: nerfViewInconsistency,
+  gan_fingerprint_mask: ganFingerprintMask,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -79,6 +81,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "rolling_shutter_tear",
   "codec_macroblock_decoy",
   "nerf_view_inconsistency",
+  "gan_fingerprint_mask",
 ];
 
 export * from "./types";

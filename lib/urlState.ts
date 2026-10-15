@@ -35,6 +35,7 @@ const ENGINE_IDS: EngineId[] = [
   "rolling_shutter_tear",
   "codec_macroblock_decoy",
   "nerf_view_inconsistency",
+  "gan_fingerprint_mask",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
