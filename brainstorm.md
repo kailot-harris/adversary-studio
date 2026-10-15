@@ -74,7 +74,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `codec_macroblock_decoy` — built
 - [x] `nerf_view_inconsistency` — built
 - [x] `point_cloud_static` — built
-- [ ] `slam_feature_desert`
+- [x] `slam_feature_desert` — built
 - [ ] `gan_fingerprint_mask`
 - [ ] `steganalysis_noise_bed`
 - [ ] `watermark_collision`

@@ -36,6 +36,7 @@ const ENGINE_IDS: EngineId[] = [
   "codec_macroblock_decoy",
   "nerf_view_inconsistency",
   "point_cloud_static",
+  "slam_feature_desert",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
