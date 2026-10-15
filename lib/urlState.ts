@@ -22,6 +22,7 @@ const ENGINE_IDS: EngineId[] = [
   "fiducial_mimic",
   "depth_spoof",
   "thermal_decoy",
+  "ocr_glitch",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
