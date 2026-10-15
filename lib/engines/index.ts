@@ -27,6 +27,7 @@ import { pointCloudStatic } from "./pointCloudStatic";
 import { slamFeatureDesert } from "./slamFeatureDesert";
 import { ganFingerprintMask } from "./ganFingerprintMask";
 import { steganalysisNoiseBed } from "./steganalysisNoiseBed";
+import { crowdCountDecoy } from "./crowdCountDecoy";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -59,6 +60,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   slam_feature_desert: slamFeatureDesert,
   gan_fingerprint_mask: ganFingerprintMask,
   steganalysis_noise_bed: steganalysisNoiseBed,
+  crowd_count_decoy: crowdCountDecoy,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -91,6 +93,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "slam_feature_desert",
   "gan_fingerprint_mask",
   "steganalysis_noise_bed",
+  "crowd_count_decoy",
 ];
 
 export * from "./types";
