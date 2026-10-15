@@ -8,12 +8,17 @@ collapsed-by-default, 5-category accordion; (2) **the project's first test
 runner (Vitest) was added**, previously nonexistent; and (3) **the first
 real pass of live browser verification ever done on this project happened
 this session, on mobile, and it immediately caught two real bugs** — see
-"Progress tracking" for both. **Stage 5 of `ENGINE_SELECTOR_PLAN.md` (the
-rest of the manual verification checklist) is still the literal next unit
-of work** — the accordion is now confirmed *working* on mobile, but the
-full checklist (keyboard nav, desktop sidebar check, all-32-engines
-click-through) has not been run. For whoever picks this up next — human or
-fresh agent, no prior session context assumed.
+"Progress tracking" for both; after both fixes, the user re-tested live
+and confirmed the fix held — selected `reid_camouflage` via the "Biometric
+& Identity" category, saw its color-blocked tile canvas render correctly,
+full dark theme/glass panel styling intact, collapsed accordion reading
+"ENGINE · ReID Camouflage" as expected. **Stage 5 of
+`ENGINE_SELECTOR_PLAN.md` (the rest of the manual verification checklist)
+is still the next unit of work** — the accordion and one non-default
+engine are now confirmed *working* on mobile, but the full checklist
+(375px devtools emulation, keyboard nav, desktop sidebar check, the other
+30 engines' click-through) has not been run. For whoever picks this up
+next — human or fresh agent, no prior session context assumed.
 
 ## What this project is
 
@@ -99,10 +104,15 @@ match: stages 0-4's 20 items are `- [x]`, stage 5's 6 items are still
 `- [ ]` — **but stage 5 is now partially exercised in practice**, not fully
 unstarted: the user loaded the real page on a real phone over LAN and
 confirmed (after both bugs below were fixed) that categories open/close
-correctly and engine selection re-collapses the panel. What's *not* yet
-done from stage 5's checklist: 375px devtools viewport emulation
-specifically, keyboard-only operation, the desktop `w-80` sidebar check,
-and clicking through all 32 engine tabs. See "Concrete next step."
+correctly, engine selection re-collapses the panel, and — in a second,
+later live check — selecting `reid_camouflage` from the "Biometric &
+Identity" category correctly rendered its color-blocked-tile canvas output
+with full styling intact (the first non-default engine ever
+browser-confirmed on this project; `cv_dazzle`, the default, was the one
+exercised while fixing the two bugs). What's *not* yet done from stage 5's
+checklist: 375px devtools viewport emulation specifically, keyboard-only
+operation, the desktop `w-80` sidebar check, and clicking through the
+other 30 engine tabs. See "Concrete next step."
 
 **Bug 1 (caught by the user, non-accordion): the whole page rendered
 completely unstyled on mobile** — no dark theme, no glassmorphic panel,
@@ -180,24 +190,27 @@ There is no issue tracker beyond `brainstorm.md` + this file.
 
 **Git repo:** remote is `origin` →
 `https://github.com/kailot-harris/adversary_studio.git`, default branch is
-`main`. The 15-engine batch's commits (prior part of this session) plus
-this session's 3 engine-selector/Vitest/bugfix commits (`703100d`,
-`4a12afd`, `3f2340b`) are all pushed. As of this writing, only this
-HANDOFF.md update and the `ENGINE_SELECTOR_PLAN.md` checkbox update are
-uncommitted (`git status --porcelain` shows exactly those two files
-modified, nothing else) — commit and push those once this doc is reviewed.
+`main`. The 15-engine batch's commits (prior part of this session), this
+session's engine-selector/Vitest/bugfix commits (`703100d`, `4a12afd`,
+`3f2340b`), and the prior version of this HANDOFF update (`9efa1b6`) are
+all pushed. `git status --porcelain` is clean as of this writing except
+for this doc's own in-progress edit — commit and push once reviewed.
 
 **Validation evidence:** `npm run build` passes clean on `main` as of this
 writing (verified fresh after every one of the 15-engine session's 4
 merge-batches, with `.next` cleared first each time per the build-cache
 gotcha below, plus again after the engine-selector work and both bugfixes
 landed — `rm -rf .next && npm run build`, zero errors, static generation
-4/4; `npm run test` also passes, 4/4). **The 32 individual engines'
-rendered output has never been browser-verified** — every "it builds" claim
-for them is still a type-check + static-generation check only. The
-accordion itself *has* now been browser-verified (live, on mobile, by the
-user) — that's new this session and is the first time any part of this
-project has had real browser verification. See "Concrete next step."
+4/4; `npm run test` also passes, 4/4). **30 of the 32 individual engines'
+rendered output has never been browser-verified** — every "it builds"
+claim for them is still a type-check + static-generation check only.
+**Two engines now have real browser verification, both live on mobile by
+the user:** `cv_dazzle` (the default, exercised while fixing the two bugs
+below) and `reid_camouflage` (a deliberate second check after both fixes,
+confirming the fix held and that engine selection + rendering works for a
+non-default engine too). This is the first time any part of this project
+has had real browser verification — see "Concrete next step" for the
+other 30.
 
 ## What's actually implemented
 
@@ -311,7 +324,8 @@ has a design decision yet — not touched this session, still open proposals.
   "Progress tracking") that `npm run build` passing clean had completely
   missed. Take this as confirmation, not reassurance — "build passes" is
   not evidence of correctness for anything interactive or visual in this
-  codebase, and the 31 other engines still have zero browser-based
+  codebase. Two engines (`cv_dazzle`, `reid_camouflage`) now have live
+  mobile verification; the other 30 still have zero browser-based
   verification.
 - **Dev-server-vs-build race, hit fresh this session (new gotcha, distinct
   from the build-cache gotcha above):** running `rm -rf .next && npm run
@@ -479,17 +493,21 @@ yet done:
   render a blank/broken canvas (this still hasn't been done for *any* of
   the 32 engines — see option B).
 - Loading `?engine=<id>` for one engine from each of the 5 categories and
-  confirming the accordion opens directly to the right category each time
-  — not yet spot-checked beyond the default `cv_dazzle` (Biometric &
-  Identity) case exercised while fixing Bug 2.
+  confirming the accordion opens directly to the right category each
+  time — so far only **Biometric & Identity** has been exercised (via
+  `cv_dazzle` while fixing Bug 2, then `reid_camouflage` as a second
+  confirmation check) — the other 4 categories (Detector & Scene Analysis,
+  Sensor & 3D Capture, Classifier & Perturbation, Codec & Forensics) are
+  still unchecked.
 
 **B. Visual verification debt (still outstanding, now very overdue, but
-partially started).** This session's live mobile test was the first-ever
-browser verification of this project, and it only covered the accordion
-itself, not the 32 engines' actual rendered output. Start `npm run dev`
-(check first whether one is already running per the dev-server-race gotcha
-above), open the app, and click through all 32 engine tabs, reroll a few
-times per engine, and sanity-check:
+partially started).** This session's live mobile tests were the
+first-ever browser verification of this project, and together they've only
+covered the accordion plus 2 of the 32 engines' actual rendered output
+(`cv_dazzle`, `reid_camouflage`). Start `npm run dev` (check first whether
+one is already running per the dev-server-race gotcha above), open the
+app, and click through the other 30 engine tabs, reroll a few times per
+engine, and sanity-check:
 - All 15 engines built in the prior part of this session — none has ever
   been rendered.
 - `segmentation_shatter`, `depth_spoof`, and `moire_interference` carry
