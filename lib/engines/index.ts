@@ -19,6 +19,7 @@ import { saliencyInversion } from "./saliencyInversion";
 import { irisCodeJam } from "./irisCodeJam";
 import { livenessSpoofTexture } from "./livenessSpoofTexture";
 import { gaitScramble } from "./gaitScramble";
+import { codecMacroblockDecoy } from "./codecMacroblockDecoy";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -43,6 +44,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   iris_code_jam: irisCodeJam,
   liveness_spoof_texture: livenessSpoofTexture,
   gait_scramble: gaitScramble,
+  codec_macroblock_decoy: codecMacroblockDecoy,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -67,6 +69,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "iris_code_jam",
   "liveness_spoof_texture",
   "gait_scramble",
+  "codec_macroblock_decoy",
 ];
 
 export * from "./types";
