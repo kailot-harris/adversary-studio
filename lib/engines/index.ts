@@ -16,6 +16,7 @@ import { anchorBoxFlood } from "./anchorBoxFlood";
 import { licensePlateGhost } from "./licensePlateGhost";
 import { reidCamouflage } from "./reidCamouflage";
 import { saliencyInversion } from "./saliencyInversion";
+import { irisCodeJam } from "./irisCodeJam";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -37,6 +38,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   license_plate_ghost: licensePlateGhost,
   reid_camouflage: reidCamouflage,
   saliency_inversion: saliencyInversion,
+  iris_code_jam: irisCodeJam,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -58,6 +60,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "license_plate_ghost",
   "reid_camouflage",
   "saliency_inversion",
+  "iris_code_jam",
 ];
 
 export * from "./types";

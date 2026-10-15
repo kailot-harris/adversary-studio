@@ -28,6 +28,7 @@ const ENGINE_IDS: EngineId[] = [
   "license_plate_ghost",
   "reid_camouflage",
   "saliency_inversion",
+  "iris_code_jam",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
