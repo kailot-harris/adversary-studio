@@ -25,6 +25,7 @@ import { codecMacroblockDecoy } from "./codecMacroblockDecoy";
 import { nerfViewInconsistency } from "./nerfViewInconsistency";
 import { pointCloudStatic } from "./pointCloudStatic";
 import { slamFeatureDesert } from "./slamFeatureDesert";
+import { ganFingerprintMask } from "./ganFingerprintMask";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -55,6 +56,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   nerf_view_inconsistency: nerfViewInconsistency,
   point_cloud_static: pointCloudStatic,
   slam_feature_desert: slamFeatureDesert,
+  gan_fingerprint_mask: ganFingerprintMask,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -85,6 +87,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "nerf_view_inconsistency",
   "point_cloud_static",
   "slam_feature_desert",
+  "gan_fingerprint_mask",
 ];
 
 export * from "./types";

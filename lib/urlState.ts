@@ -37,6 +37,7 @@ const ENGINE_IDS: EngineId[] = [
   "nerf_view_inconsistency",
   "point_cloud_static",
   "slam_feature_desert",
+  "gan_fingerprint_mask",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
