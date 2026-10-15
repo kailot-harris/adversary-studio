@@ -17,6 +17,7 @@ const ENGINE_IDS: EngineId[] = [
   "gabor_grating",
   "fgsm_noise",
   "moire_interference",
+  "optical_flow_jammer",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
