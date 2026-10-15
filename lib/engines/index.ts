@@ -14,6 +14,7 @@ import { ocrGlitch } from "./ocrGlitch";
 import { faceMeshScramble } from "./faceMeshScramble";
 import { anchorBoxFlood } from "./anchorBoxFlood";
 import { licensePlateGhost } from "./licensePlateGhost";
+import { reidCamouflage } from "./reidCamouflage";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -33,6 +34,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   face_mesh_scramble: faceMeshScramble,
   anchor_box_flood: anchorBoxFlood,
   license_plate_ghost: licensePlateGhost,
+  reid_camouflage: reidCamouflage,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -52,6 +54,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "face_mesh_scramble",
   "anchor_box_flood",
   "license_plate_ghost",
+  "reid_camouflage",
 ];
 
 export * from "./types";

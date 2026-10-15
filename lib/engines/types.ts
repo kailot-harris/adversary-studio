@@ -16,7 +16,8 @@ export type EngineId =
   | "ocr_glitch"
   | "face_mesh_scramble"
   | "anchor_box_flood"
-  | "license_plate_ghost";
+  | "license_plate_ghost"
+  | "reid_camouflage";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
