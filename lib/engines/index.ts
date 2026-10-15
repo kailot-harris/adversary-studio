@@ -22,6 +22,7 @@ import { gaitScramble } from "./gaitScramble";
 import { jpegDctBloom } from "./jpegDctBloom";
 import { rollingShutterTear } from "./rollingShutterTear";
 import { codecMacroblockDecoy } from "./codecMacroblockDecoy";
+import { nerfViewInconsistency } from "./nerfViewInconsistency";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -49,6 +50,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   jpeg_dct_bloom: jpegDctBloom,
   rolling_shutter_tear: rollingShutterTear,
   codec_macroblock_decoy: codecMacroblockDecoy,
+  nerf_view_inconsistency: nerfViewInconsistency,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -76,6 +78,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "jpeg_dct_bloom",
   "rolling_shutter_tear",
   "codec_macroblock_decoy",
+  "nerf_view_inconsistency",
 ];
 
 export * from "./types";

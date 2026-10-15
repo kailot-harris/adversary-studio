@@ -34,6 +34,7 @@ const ENGINE_IDS: EngineId[] = [
   "jpeg_dct_bloom",
   "rolling_shutter_tear",
   "codec_macroblock_decoy",
+  "nerf_view_inconsistency",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

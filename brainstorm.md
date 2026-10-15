@@ -72,7 +72,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `jpeg_dct_bloom` — built
 - [x] `rolling_shutter_tear` — built
 - [x] `codec_macroblock_decoy` — built
-- [ ] `nerf_view_inconsistency`
+- [x] `nerf_view_inconsistency` — built
 - [ ] `point_cloud_static`
 - [ ] `slam_feature_desert`
 - [ ] `gan_fingerprint_mask`
