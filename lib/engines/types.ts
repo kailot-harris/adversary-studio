@@ -8,7 +8,8 @@ export type EngineId =
   | "gabor_grating"
   | "fgsm_noise"
   | "moire_interference"
-  | "optical_flow_jammer";
+  | "optical_flow_jammer"
+  | "segmentation_shatter";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

@@ -6,6 +6,7 @@ import { gaborGrating } from "./gaborGrating";
 import { fgsmNoise } from "./fgsmNoise";
 import { moireInterference } from "./moireInterference";
 import { opticalFlowJammer } from "./opticalFlowJammer";
+import { segmentationShatter } from "./segmentationShatter";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -17,6 +18,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   fgsm_noise: fgsmNoise,
   moire_interference: moireInterference,
   optical_flow_jammer: opticalFlowJammer,
+  segmentation_shatter: segmentationShatter,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -28,6 +30,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "fgsm_noise",
   "moire_interference",
   "optical_flow_jammer",
+  "segmentation_shatter",
 ];
 
 export * from "./types";
