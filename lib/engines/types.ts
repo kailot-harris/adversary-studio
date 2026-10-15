@@ -25,7 +25,8 @@ export type EngineId =
   | "jpeg_dct_bloom"
   | "rolling_shutter_tear"
   | "codec_macroblock_decoy"
-  | "nerf_view_inconsistency";
+  | "nerf_view_inconsistency"
+  | "slam_feature_desert";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

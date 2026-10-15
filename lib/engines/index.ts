@@ -23,6 +23,7 @@ import { jpegDctBloom } from "./jpegDctBloom";
 import { rollingShutterTear } from "./rollingShutterTear";
 import { codecMacroblockDecoy } from "./codecMacroblockDecoy";
 import { nerfViewInconsistency } from "./nerfViewInconsistency";
+import { slamFeatureDesert } from "./slamFeatureDesert";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -51,6 +52,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   rolling_shutter_tear: rollingShutterTear,
   codec_macroblock_decoy: codecMacroblockDecoy,
   nerf_view_inconsistency: nerfViewInconsistency,
+  slam_feature_desert: slamFeatureDesert,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -79,6 +81,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "rolling_shutter_tear",
   "codec_macroblock_decoy",
   "nerf_view_inconsistency",
+  "slam_feature_desert",
 ];
 
 export * from "./types";
