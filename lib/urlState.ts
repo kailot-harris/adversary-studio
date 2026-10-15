@@ -24,6 +24,7 @@ const ENGINE_IDS: EngineId[] = [
   "thermal_decoy",
   "ocr_glitch",
   "face_mesh_scramble",
+  "anchor_box_flood",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

@@ -14,7 +14,8 @@ export type EngineId =
   | "depth_spoof"
   | "thermal_decoy"
   | "ocr_glitch"
-  | "face_mesh_scramble";
+  | "face_mesh_scramble"
+  | "anchor_box_flood";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

@@ -12,6 +12,7 @@ import { depthSpoof } from "./depthSpoof";
 import { thermalDecoy } from "./thermalDecoy";
 import { ocrGlitch } from "./ocrGlitch";
 import { faceMeshScramble } from "./faceMeshScramble";
+import { anchorBoxFlood } from "./anchorBoxFlood";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -29,6 +30,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   thermal_decoy: thermalDecoy,
   ocr_glitch: ocrGlitch,
   face_mesh_scramble: faceMeshScramble,
+  anchor_box_flood: anchorBoxFlood,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -46,6 +48,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "thermal_decoy",
   "ocr_glitch",
   "face_mesh_scramble",
+  "anchor_box_flood",
 ];
 
 export * from "./types";
