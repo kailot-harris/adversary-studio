@@ -2,3 +2,5 @@ node_modules
 .next
 out
 .subagent-runs
+# subagent-brief run logs (may contain sensitive output)
+/.subagent-runs/
