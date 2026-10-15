@@ -34,20 +34,20 @@ document is the stage-by-stage build order.
 **Goal:** a single source of truth for category membership, independent of
 the UI.
 
-- [ ] Create `lib/engines/categories.ts`:
+- [x] Create `lib/engines/categories.ts`:
   - `export interface EngineCategory { id: string; label: string; engineIds: EngineId[]; }`
   - `export const CATEGORIES: EngineCategory[]` — the 5 buckets above.
   - `export function categoryOf(id: EngineId): EngineCategory` — throws (or
     returns a clearly-marked "uncategorized" sentinel) if an engine id isn't
     found in any bucket, so a future engine #33 added without updating this
     file fails loudly instead of silently.
-- [ ] Add a cheap consistency check — either a one-off script or a test —
+- [x] Add a cheap consistency check — either a one-off script or a test —
   asserting `CATEGORIES.flatMap(c => c.engineIds)` is a set-equal match to
   `ENGINE_ORDER` from `lib/engines/index.ts` (same ids, no duplicates, none
   missing). This is the same "list maintained in multiple places" failure
   mode already flagged in `HANDOFF.md` for `EngineId`/`ENGINES`/`ENGINE_IDS`
   — don't let a 4th copy drift silently.
-- [ ] `npm run build` — must still pass (this stage adds a file nothing
+- [x] `npm run build` — must still pass (this stage adds a file nothing
   imports yet, so it's a no-risk checkpoint).
 
 **Exit criteria:** `categories.ts` exists, exports are typed correctly, and
@@ -60,13 +60,13 @@ the consistency check passes against the current 32-engine `ENGINE_ORDER`.
 **Goal:** move the existing flat list into its own component, unchanged
 visually, to isolate the refactor from the redesign.
 
-- [ ] Create `components/EngineSelector.tsx` taking the same props the
+- [x] Create `components/EngineSelector.tsx` taking the same props the
   inline block in `ControlPanel.tsx` currently uses (`engine`,
   `onEngineChange`), rendering the identical flat `ENGINE_ORDER.map(...)`
   button grid — a pure extraction, no new behavior.
-- [ ] Update `ControlPanel.tsx` to render `<EngineSelector engine={engine} onEngineChange={onEngineChange} />`
+- [x] Update `ControlPanel.tsx` to render `<EngineSelector engine={engine} onEngineChange={onEngineChange} />`
   in place of the inline block.
-- [ ] `npm run build` clean. Visually/structurally nothing should have
+- [x] `npm run build` clean. Visually/structurally nothing should have
   changed yet — this stage is purely mechanical, so it's the point to catch
   any prop-wiring mistakes before adding the harder accordion logic on top.
 
@@ -81,13 +81,13 @@ engine-list JSX directly, app behavior is identical to pre-refactor.
 collapse/expand mechanic — this isolates "does the grouping render
 correctly" from "does the show/hide interaction work correctly."
 
-- [ ] In `EngineSelector.tsx`, replace the single flat map with
+- [x] In `EngineSelector.tsx`, replace the single flat map with
   `CATEGORIES.map(category => ...)`, rendering a category label heading
   (reuse the existing `text-[10px] tracking-widest` label style used for
   SEED/PARAMETERS) followed by that category's engine buttons.
-- [ ] Reuse the existing button markup/active-state styling as-is per
+- [x] Reuse the existing button markup/active-state styling as-is per
   engine — only the grouping wrapper is new.
-- [ ] `npm run build` clean.
+- [x] `npm run build` clean.
 
 **Exit criteria:** the panel shows 5 labeled groups of ≤7 buttons each,
 selecting an engine still calls `onEngineChange` correctly, nothing is
@@ -101,29 +101,29 @@ expected and fixed in Stage 3).
 **Goal:** the actual fix for the "32 rows above the sliders" problem, on
 both mobile and desktop via the same markup.
 
-- [ ] Build each category section on native `<details>/<summary>` (free
+- [x] Build each category section on native `<details>/<summary>` (free
   keyboard support — Enter/Space toggles, no custom ARIA needed) rather
   than a hand-rolled `useState` + conditional-render toggle.
-- [ ] Wrap the whole selector in an outer `<details>` too: collapsed by
+- [x] Wrap the whole selector in an outer `<details>` too: collapsed by
   default, `<summary>` shows `ENGINE · {ENGINES[engine].label}` plus a
   chevron icon (`lucide-react`'s `ChevronDown`, rotated via a CSS class
   toggled off the native `[open]` attribute selector — no extra JS state
   needed for the rotation).
-- [ ] Single-open accordion behavior for the *inner* category sections:
+- [x] Single-open accordion behavior for the *inner* category sections:
   on `toggle`, if a category is being opened, find and close any other
   open `<details>` siblings (vanilla DOM, a handful of lines in a `ref`-
   based effect, or the browser-native `name` attribute if testing shows
   sufficiently wide `<details name="...">` support in the target
   browsers — check this before hand-rolling the close-others logic).
-- [ ] On expand of the outer selector, auto-open the inner category that
+- [x] On expand of the outer selector, auto-open the inner category that
   contains the *current* engine (compute via `categoryOf(engine)` from
   Stage 0) — otherwise a URL-loaded engine from, say, "Codec & Forensics"
   leaves the user looking at a wall of 5 closed, unlabeled-as-current
   sections with no indication which one to open.
-- [ ] On selecting an engine, close the outer `<details>` (re-collapse)
+- [x] On selecting an engine, close the outer `<details>` (re-collapse)
   so the panel returns to its compact state — minimizes scroll/taps,
   especially on mobile.
-- [ ] `npm run build` clean.
+- [x] `npm run build` clean.
 
 **Exit criteria:** default panel view shows a single collapsed row for
 engine selection; expanding it opens directly to the current engine's
@@ -136,21 +136,21 @@ category; picking any engine from any category re-collapses the selector.
 **Goal:** the mobile-specific requirements called out in the plan
 discussion, applied uniformly (same component, no device branching).
 
-- [ ] Audit all tap targets in `EngineSelector.tsx` (category `<summary>`
+- [x] Audit all tap targets in `EngineSelector.tsx` (category `<summary>`
   rows, individual engine buttons, the outer selector's `<summary>`) —
   bump padding so each is ≥44px tall. Current flat-list buttons are
   `px-3 py-2 text-xs`, roughly 32px; increase `py-2` → `py-2.5`/`py-3` as
   needed and re-measure.
-- [ ] Verify no hover-only affordance is load-bearing — the chevron
+- [x] Verify no hover-only affordance is load-bearing — the chevron
   rotation and active/selected styling must be visible via `:active` and
   `:focus-visible`, not only `:hover` (mobile has no hover state).
-- [ ] Check text wrapping/truncation for the longer category labels
+- [x] Check text wrapping/truncation for the longer category labels
   (e.g. "Classifier & Perturbation") at a 320–375px viewport width — no
   horizontal overflow, no awkward mid-word breaks.
-- [ ] Wrap the expand/collapse transition (if any CSS transition is added
+- [x] Wrap the expand/collapse transition (if any CSS transition is added
   for the chevron or height) in a `prefers-reduced-motion` guard in
   `app/globals.css`.
-- [ ] `npm run build` clean.
+- [x] `npm run build` clean.
 
 **Exit criteria:** every interactive element in the selector meets the
 44px touch-target guideline, nothing depends on `:hover`, no horizontal

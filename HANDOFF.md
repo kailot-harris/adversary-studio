@@ -1,16 +1,19 @@
 # HANDOFF — ADVERSARY.STUDIO
 
-Written 2026-10-15, after the 32-engine milestone (17 engines from the prior
-HANDOFF + 15 new engines built this session via the `subagent-brief` skill's
-batch mode across 4 sequential sub-batches of up to 4 parallel subagents
-each, every engine in its own `git worktree`) and a follow-up UI-planning
-pass later the same session. **`brainstorm.md`'s engine-idea backlog is
-fully exhausted — zero unbuilt ideas remain.** Instead, this session closed
-by designing and writing a **staged, unstarted implementation plan** for
-restructuring the engine picker — see `ENGINE_SELECTOR_PLAN.md` at the repo
-root, committed but **not yet implemented** (Stage 0 of 6 hasn't started).
-For whoever picks this up next — human or fresh agent, no prior session
-context assumed.
+Written 2026-10-15, after the 32-engine milestone (prior HANDOFF state) was
+followed by three more things in this same session: (1) **Stages 0-4 of
+`ENGINE_SELECTOR_PLAN.md` are implemented, bug-fixed, user-verified live on a
+phone, and pushed to `main`** — the flat 32-button engine list is now a
+collapsed-by-default, 5-category accordion; (2) **the project's first test
+runner (Vitest) was added**, previously nonexistent; and (3) **the first
+real pass of live browser verification ever done on this project happened
+this session, on mobile, and it immediately caught two real bugs** — see
+"Progress tracking" for both. **Stage 5 of `ENGINE_SELECTOR_PLAN.md` (the
+rest of the manual verification checklist) is still the literal next unit
+of work** — the accordion is now confirmed *working* on mobile, but the
+full checklist (keyboard nav, desktop sidebar check, all-32-engines
+click-through) has not been run. For whoever picks this up next — human or
+fresh agent, no prior session context assumed.
 
 ## What this project is
 
@@ -26,14 +29,21 @@ produces the same pixels, via a seeded `mulberry32` PRNG + seeded Perlin noise
 (a subdirectory of a larger `Processing` folder — see "Sibling directories"
 below, they are reference material only, not part of the app).
 
-**No spec document exists.** The only planning artifact is `brainstorm.md` at
-the project root, which lists engine ideas with a checklist of built vs. not
-built. **As of this writing, every single checklist line in that file is
-checked** — there is no unbuilt backlog remaining. If you're picking this
-project up to add more engines, you'll need to brainstorm new ideas first
-(see "Concrete next step," option C). There is no architecture doc beyond
-this HANDOFF and the code itself — read the code directly rather than
-looking for a design doc that doesn't exist.
+**No spec document exists for adding engines.** The only planning artifact
+for that is `brainstorm.md` at the project root, which lists engine ideas
+with a checklist of built vs. not built. **As of this writing, every single
+checklist line in that file is checked** — there is no unbuilt backlog
+remaining. If you're picking this project up to add more engines, you'll
+need to brainstorm new ideas first (see "Concrete next step," option C).
+
+**A real staged plan does exist for the UI restructure**: `ENGINE_SELECTOR_PLAN.md`
+at the repo root. Its checkboxes track 6 stages (0-5); **stages 0-4 are now
+checked off and implemented** (this session), **stage 5 (manual browser
+verification) is partially exercised but its checklist is still unchecked**
+— read that file's "Stage 5" section, and "Progress tracking" below, before
+doing anything else. There is no other architecture doc beyond this
+HANDOFF and the code itself — read the code directly rather than looking
+for a design doc that doesn't exist.
 
 **Hard boundary:** the five `.pde` Processing sketches in the sibling
 `adv_*` directories (see below) are the *original prototypes* each engine was
@@ -59,6 +69,85 @@ The other 27 engines have no `.pde` prototype — they were designed directly
 in TypeScript from `brainstorm.md`'s one-line descriptions.
 
 ## Progress tracking
+
+**`ENGINE_SELECTOR_PLAN.md` — stages 0-4 implemented and bug-fixed this
+session; stage 5 partially covered, not finished.** Three commits on
+`main` (all pushed, in order):
+
+1. `703100d` "Replace flat 32-engine button list with categorized accordion
+   selector" — stages 0-4: `lib/engines/categories.ts` (data layer),
+   `lib/engines/categories.check.mjs` (consistency check), new
+   `components/EngineSelector.tsx` (the accordion itself, replacing the
+   inline block that used to live in `components/ControlPanel.tsx`), plus
+   the touch-target/accessibility pass (stage 4). Built by a dispatched
+   subagent in an isolated worktree, independently re-verified afterward
+   (re-read both new files in full, re-ran the consistency check and
+   `rm -rf .next && npm run build` myself) before merging.
+2. `4a12afd` "Add Vitest as the project's test runner" — unrelated to the
+   accordion itself; bundled into the same session because the user asked
+   "Can we fix this: No test runner is configured" mid-task. See
+   "Environment/tooling notes" below for exactly what it added.
+3. `3f2340b` "Fix engine accordion: inner category toggles stomped back to
+   current category" — **a real bug the user caught on their first live
+   mobile test**, within minutes of the accordion existing. See the bug
+   writeup directly below; don't assume commit 1's "build passes clean" was
+   sufficient evidence of correctness — it wasn't, this bug was invisible
+   to `npm run build` and was only caught by actually clicking the thing.
+
+The plan's own checkboxes in `ENGINE_SELECTOR_PLAN.md` have been updated to
+match: stages 0-4's 20 items are `- [x]`, stage 5's 6 items are still
+`- [ ]` — **but stage 5 is now partially exercised in practice**, not fully
+unstarted: the user loaded the real page on a real phone over LAN and
+confirmed (after both bugs below were fixed) that categories open/close
+correctly and engine selection re-collapses the panel. What's *not* yet
+done from stage 5's checklist: 375px devtools viewport emulation
+specifically, keyboard-only operation, the desktop `w-80` sidebar check,
+and clicking through all 32 engine tabs. See "Concrete next step."
+
+**Bug 1 (caught by the user, non-accordion): the whole page rendered
+completely unstyled on mobile** — no dark theme, no glassmorphic panel,
+default browser buttons/sliders, blank canvas. This looked like a
+CSS/responsive problem but wasn't. **Root cause: a race between a live
+`next dev` server and repeated `rm -rf .next && npm run build` runs during
+this same session.** Three dev-server instances had been running since
+~12:12 AM (likely left over from an earlier session), all sharing the
+project's single `.next` directory. Every `rm -rf .next && npm run build`
+I ran to verify the accordion (both mine and the subagent's) wiped that
+directory out from under the live dev server's asset serving — the JS
+bundle kept running (hence plain-text labels/controls still rendering) but
+the CSS chunk the dev server was serving broke, and the canvas's `render()`
+effect apparently didn't recover either. **Fix:** killed the stale
+`next dev` process trees (`taskkill //F //T //PID <pid>` — found via
+`Get-NetTCPConnection -State Listen` on ports 3000/3001, then walked up to
+the top-level `npm run dev` ancestor via `Get-CimInstance Win32_Process
+... ParentProcessId`, since killing only the leaf `start-server.js` PID got
+it auto-respawned by its `next dev` parent) and started one clean instance.
+Confirmed fixed by `curl`-ing `/_next/static/css/app/layout.css` directly
+and seeing real Tailwind output (24KB), not a 404/empty response. **If you
+run `rm -rf .next && npm run build` for verification purposes while `npm
+run dev` is also running, expect this exact failure mode again** — either
+stop the dev server first, or accept you'll need to restart it after.
+
+**Bug 2 (caught by the user, in the accordion itself): tapping any
+category other than the one containing the currently-selected engine
+immediately closed again** ("it just microrefreshes and reopens the
+biometric & identity leaf"). **Root cause: a genuine React gotcha, not a
+authoring mistake in the obvious sense** — React's synthetic `onToggle`
+event handler re-fires for *nested* `<details>` toggles, even though the
+native DOM `toggle` event does not bubble per spec. The outer selector's
+`handleOuterToggle` (meant to fire only when the outer panel itself
+expands) was therefore re-running on every inner category's open/close,
+each time force-reopening `categoryOf(engine)` — i.e. whichever category
+contains the currently-selected engine — and stomping over whatever
+category the user had just tried to open. **Fix (`components/EngineSelector.tsx`,
+`handleOuterToggle`):** added `e.target !== outer` as an early-return guard,
+so the handler only acts when the toggle event's target is the outer
+`<details>` element itself. If you add more nested `<details>`/`onToggle`
+anywhere else in this codebase, assume React's bubbling-even-though-DOM-
+doesn't behavior applies there too — check `event.target` rather than
+trusting that an ancestor's `onToggle` only fires for its own state change.
+
+---
 
 `brainstorm.md`'s "Status" checklist holds **27 checked lines, 0 unchecked**
 (verified fresh this session via `grep -c "\[ \]"` → 0, `grep -c "\[x\]"` →
@@ -91,18 +180,24 @@ There is no issue tracker beyond `brainstorm.md` + this file.
 
 **Git repo:** remote is `origin` →
 `https://github.com/kailot-harris/adversary_studio.git`, default branch is
-`main`. All 26 of this session's commits are pushed; `git status` → working
-tree clean, `main` up to date with `origin/main` as of this writing.
+`main`. The 15-engine batch's commits (prior part of this session) plus
+this session's 3 engine-selector/Vitest/bugfix commits (`703100d`,
+`4a12afd`, `3f2340b`) are all pushed. As of this writing, only this
+HANDOFF.md update and the `ENGINE_SELECTOR_PLAN.md` checkbox update are
+uncommitted (`git status --porcelain` shows exactly those two files
+modified, nothing else) — commit and push those once this doc is reviewed.
 
 **Validation evidence:** `npm run build` passes clean on `main` as of this
-writing (verified fresh after every one of this session's 4 merge-batches,
-with `.next` cleared first each time per the build-cache gotcha below, plus
-one final verification after all 15 engines were merged — 29.0s full
-rebuild, zero errors, static generation 4/4). **No browser-based visual
-verification has been done for any of the 32 engines, ever** — every
-"it builds" claim in this repo's history is a type-check + static-generation
-check only. This is still the single biggest unaddressed gap in this
-project's validation story; see "Concrete next step."
+writing (verified fresh after every one of the 15-engine session's 4
+merge-batches, with `.next` cleared first each time per the build-cache
+gotcha below, plus again after the engine-selector work and both bugfixes
+landed — `rm -rf .next && npm run build`, zero errors, static generation
+4/4; `npm run test` also passes, 4/4). **The 32 individual engines'
+rendered output has never been browser-verified** — every "it builds" claim
+for them is still a type-check + static-generation check only. The
+accordion itself *has* now been browser-verified (live, on mobile, by the
+user) — that's new this session and is the first time any part of this
+project has had real browser verification. See "Concrete next step."
 
 ## What's actually implemented
 
@@ -116,7 +211,12 @@ Core infrastructure (unchanged this session):
 | `lib/engines/types.ts` | 57 | Done. `EngineId` union (32 values), `EngineParams` (density/scale/frequency/accentHue, all 0-1 except hue 0-360), `RenderEngine` interface. |
 | `lib/engines/index.ts` | 105 | Done. `ENGINES` record and `ENGINE_ORDER` array, all 32 ids — **this is the third place the engine-id list is duplicated** (see gotcha below). |
 | `components/StudioCanvas.tsx` | 36 | Done. Takes a `canvasRef` prop (not `forwardRef`), runs the selected engine's `render()` in a `useEffect` keyed on `[canvasRef, engine, seed, params, canvasSize]`. |
-| `components/ControlPanel.tsx` | 145 | Done. Engine tab list, 4 sliders, reroll/export/share buttons. Not yet updated with any palette-preset picker (see below). |
+| `components/ControlPanel.tsx` | 127 | Done. No longer contains the engine list inline (see `EngineSelector.tsx` below) — now just renders `<EngineSelector />`, the SEED readout, 4 sliders, and reroll/export/share buttons. Not yet updated with any palette-preset picker (see below). |
+| `components/EngineSelector.tsx` | 96 | Done, bug-fixed, user-verified live on mobile this session. The collapsed-by-default 5-category accordion (see "Progress tracking" for the bug both in getting it right and in its one real bug). |
+| `lib/engines/categories.ts` | 111 | Done this session. `CATEGORIES` (5 buckets, ≤7 engines each), `categoryOf()`, `UNCATEGORIZED` sentinel, plus a dev-time runtime consistency guard. |
+| `lib/engines/categories.check.mjs` | 107 | Done this session. Standalone Node script (no test runner dependency) asserting `CATEGORIES` and `ENGINE_ORDER` stay set-equal; run via `node lib/engines/categories.check.mjs`. |
+| `vitest.config.ts` | 13 | Done this session. Resolves the `@/*` path alias for Vitest. |
+| `lib/mulberry32.test.ts` | 30 | Done this session. Smoke-test spec proving the test runner, alias, and TS all work — not exhaustive engine coverage, just a runner-works proof. |
 | `components/Studio.tsx` | 154 | Done. All state (`engine`, `seed`, `params`, `shareCopied`), URL sync via `router.replace`, keyboard shortcuts (Space=reroll, S=export), PNG export at a fixed 1024px regardless of display size, clipboard-with-fallback share link. |
 | `app/layout.tsx` | 22 | Done. JetBrains Mono via `next/font/google`, dark theme. |
 | `app/page.tsx` | 10 | Done. Wraps `<Studio />` in `<Suspense>`. |
@@ -190,12 +290,56 @@ has a design decision yet — not touched this session, still open proposals.
 - **`npm audit` will always show some findings** — dev-time
   `tailwindcss`/`postcss` transitive-dep CVEs with no non-breaking fix
   available. Not shipped to the browser, not re-investigated this session
-  since nothing changed about the dependency tree; expected noise.
-- **No browser automation tool is available in this environment.** All
-  "verification" done across this project's history is `npm run build`
-  (type-check + static generation) — nobody has ever looked at rendered
-  pixels for any of the 32 engines. Still the single biggest gap in this
-  project's validation story.
+  since nothing changed about the dependency tree; expected noise. **As of
+  this session this list grew by one, and it's worth reading rather than
+  dismissing as more noise:** adding `vitest` pulled in `tinypool`, which
+  `npm audit` flags as a **critical** prototype-pollution-to-RCE advisory
+  (`GHSA-5gmw-xhrv-c9v3` / `GHSA-85c8-ppgw-ccpr`). The fix is `vitest@5`,
+  which requires `@types/node@^22||>=24` — this project pins `@types/node@^20`
+  deliberately, so `vitest@2.1.9` was installed instead to avoid that bump.
+  `tinypool` is Vitest's own worker-pool implementation, dev-only, never
+  shipped to the browser or to production — but if you ever add a CI
+  pipeline that runs `npm audit` as a gate, this one will need an explicit
+  allowlist entry or the `@types/node`/`vitest` major-version bump, not a
+  silent ignore.
+- **No browser automation tool is available in this environment.** Until
+  this session, all "verification" across this project's history was
+  `npm run build` (type-check + static generation only) — nobody had ever
+  looked at rendered pixels for any of the 32 engines. **This session broke
+  that pattern for the first time**, via the user testing live on a phone
+  over LAN, and it immediately paid off: it caught two real bugs (see
+  "Progress tracking") that `npm run build` passing clean had completely
+  missed. Take this as confirmation, not reassurance — "build passes" is
+  not evidence of correctness for anything interactive or visual in this
+  codebase, and the 31 other engines still have zero browser-based
+  verification.
+- **Dev-server-vs-build race, hit fresh this session (new gotcha, distinct
+  from the build-cache gotcha above):** running `rm -rf .next && npm run
+  build` while a `next dev` server is also running against the same
+  project directory corrupts the dev server's live asset serving — JS
+  keeps running (React still renders) but CSS chunks and possibly other
+  assets break, with no error surfaced to the terminal running `next dev`.
+  Symptom looked exactly like "Tailwind isn't loading on mobile" rather
+  than "the dev server is in a broken state," which cost real debugging
+  time before the actual cause was found. **If you need to verify a build
+  while a dev server might be running, check for it first** (e.g.
+  `Get-NetTCPConnection -State Listen` on 3000/3001 in PowerShell, or
+  `netstat -ano | grep :3000` in Bash) and either stop it first or restart
+  it fresh afterward — don't assume a dev server you didn't start yourself
+  isn't there. Killing `next dev`'s process requires killing the whole
+  tree, not just the leaf `start-server.js` process — its `next dev` CLI
+  parent auto-respawns a killed server child. On Windows:
+  `taskkill //F //T //PID <top-level pid>` (double slashes needed if run
+  through Git Bash, which otherwise mangles `/F`/`/T` as path segments).
+- **React `onToggle` bubbles across nested `<details>` even though the
+  native DOM `toggle` event doesn't — a real gotcha, not a one-off
+  mistake.** Bit `EngineSelector.tsx`'s outer/inner `<details>` nesting this
+  session (see "Progress tracking," Bug 2) and is exactly the kind of thing
+  that will bite again if more nested `<details>`/`onToggle` pairs get
+  added anywhere in this codebase. Guard any outer-element `onToggle`
+  handler with `event.target !== <the element the handler is actually
+  attached to>` before trusting that it only fires for that element's own
+  state change.
 - **`subagent-brief` skill location gotcha, hit fresh this session.** The
   skill's scripts do **not** live inside this project
   (`adversarial_art_app/.claude/skills/...` does not exist) — they live at
@@ -318,26 +462,34 @@ cleanly every time:
 
 ## Concrete next step
 
-**A. Execute `ENGINE_SELECTOR_PLAN.md` (recommended — fully staged, zero
-open decisions, not started).** This session designed a 5-category
-reorganization of the 32 engines (Biometric & Identity, Detector & Scene
-Analysis, Sensor & 3D Capture, Classifier & Perturbation, Codec &
-Forensics — each ≤7 engines) and wrote a 6-stage build plan for a
-collapsed-by-default, mobile-aware accordion engine picker to replace
-`ControlPanel.tsx`'s current flat 32-button list. The plan is committed at
-the repo root (`ENGINE_SELECTOR_PLAN.md`) but **no stage has been started**
-— Stage 0 (new `lib/engines/categories.ts` data-layer file) is the literal
-next unit of work. Read that file in full before starting; it already
-specifies exact file-level changes, exit criteria per stage, and an explicit
-"out of scope" list (don't touch `lib/urlState.ts`/`types.ts`/`index.ts`'s
-persisted shape, don't re-theme `brainstorm.md`'s headers to match unless
-separately asked).
+**A. Finish `ENGINE_SELECTOR_PLAN.md` stage 5 (recommended — accordion
+already works, this is just the remaining checklist items).** Stages 0-4
+are done, bug-fixed, and confirmed working live on a phone this session
+(see "Progress tracking"). What's left from stage 5's own checklist, not
+yet done:
+- 375px-wide devtools viewport emulation pass (distinct from real-phone
+  testing already done — confirm no overflow/cramping at that exact width).
+- Keyboard-only operation: Tab to the selector, Enter/Space to expand, Tab
+  through category headers, Enter/Space to open one, Tab to an engine
+  button, Enter/Space to select it.
+- The existing desktop `w-80` fixed-sidebar layout — confirm it still
+  looks right now that the panel's default (collapsed) height is shorter.
+- Folded in from the pre-existing validation debt in option B below:
+  clicking through all 32 engine tabs at least once, confirming none
+  render a blank/broken canvas (this still hasn't been done for *any* of
+  the 32 engines — see option B).
+- Loading `?engine=<id>` for one engine from each of the 5 categories and
+  confirming the accordion opens directly to the right category each time
+  — not yet spot-checked beyond the default `cv_dazzle` (Biometric &
+  Identity) case exercised while fixing Bug 2.
 
-**B. Visual verification debt (still outstanding, now very overdue).**
-Nobody has ever looked at any of the 32 engines rendered in a browser,
-across three full sessions of additions. Start `npm run dev`, open the app,
-and click through all 32 engine tabs, reroll a few times per engine, and
-sanity-check:
+**B. Visual verification debt (still outstanding, now very overdue, but
+partially started).** This session's live mobile test was the first-ever
+browser verification of this project, and it only covered the accordion
+itself, not the 32 engines' actual rendered output. Start `npm run dev`
+(check first whether one is already running per the dev-server-race gotcha
+above), open the app, and click through all 32 engine tabs, reroll a few
+times per engine, and sanity-check:
 - All 15 engines built in the prior part of this session — none has ever
   been rendered.
 - `segmentation_shatter`, `depth_spoof`, and `moire_interference` carry
@@ -349,9 +501,6 @@ sanity-check:
   correctly now that there are 32 engines instead of 17 — the core
   "determinism" requirement and still never end-to-end verified in a
   browser.
-- Note: Stage 5 of `ENGINE_SELECTOR_PLAN.md` folds a pass of this same
-  checklist into the UI-restructure verification step, so doing option A
-  first means this gets partially covered as a side effect.
 
 **C. Brainstorm a new engine-idea backlog.** `brainstorm.md`'s idea list is
 fully exhausted (0 unchecked lines) — continuing the engine-building pattern
