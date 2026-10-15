@@ -22,7 +22,8 @@ export type EngineId =
   | "iris_code_jam"
   | "liveness_spoof_texture"
   | "gait_scramble"
-  | "jpeg_dct_bloom";
+  | "jpeg_dct_bloom"
+  | "rolling_shutter_tear";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

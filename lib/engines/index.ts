@@ -20,6 +20,7 @@ import { irisCodeJam } from "./irisCodeJam";
 import { livenessSpoofTexture } from "./livenessSpoofTexture";
 import { gaitScramble } from "./gaitScramble";
 import { jpegDctBloom } from "./jpegDctBloom";
+import { rollingShutterTear } from "./rollingShutterTear";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -45,6 +46,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   liveness_spoof_texture: livenessSpoofTexture,
   gait_scramble: gaitScramble,
   jpeg_dct_bloom: jpegDctBloom,
+  rolling_shutter_tear: rollingShutterTear,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -70,6 +72,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "liveness_spoof_texture",
   "gait_scramble",
   "jpeg_dct_bloom",
+  "rolling_shutter_tear",
 ];
 
 export * from "./types";
