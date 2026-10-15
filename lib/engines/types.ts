@@ -29,7 +29,8 @@ export type EngineId =
   | "point_cloud_static"
   | "slam_feature_desert"
   | "gan_fingerprint_mask"
-  | "steganalysis_noise_bed";
+  | "steganalysis_noise_bed"
+  | "watermark_collision";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

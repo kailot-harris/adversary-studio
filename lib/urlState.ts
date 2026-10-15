@@ -39,6 +39,7 @@ const ENGINE_IDS: EngineId[] = [
   "slam_feature_desert",
   "gan_fingerprint_mask",
   "steganalysis_noise_bed",
+  "watermark_collision",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
