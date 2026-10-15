@@ -19,7 +19,8 @@ export type EngineId =
   | "license_plate_ghost"
   | "reid_camouflage"
   | "saliency_inversion"
-  | "iris_code_jam";
+  | "iris_code_jam"
+  | "liveness_spoof_texture";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

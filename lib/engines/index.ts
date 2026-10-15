@@ -17,6 +17,7 @@ import { licensePlateGhost } from "./licensePlateGhost";
 import { reidCamouflage } from "./reidCamouflage";
 import { saliencyInversion } from "./saliencyInversion";
 import { irisCodeJam } from "./irisCodeJam";
+import { livenessSpoofTexture } from "./livenessSpoofTexture";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -39,6 +40,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   reid_camouflage: reidCamouflage,
   saliency_inversion: saliencyInversion,
   iris_code_jam: irisCodeJam,
+  liveness_spoof_texture: livenessSpoofTexture,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -61,6 +63,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "reid_camouflage",
   "saliency_inversion",
   "iris_code_jam",
+  "liveness_spoof_texture",
 ];
 
 export * from "./types";

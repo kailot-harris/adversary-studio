@@ -29,6 +29,7 @@ const ENGINE_IDS: EngineId[] = [
   "reid_camouflage",
   "saliency_inversion",
   "iris_code_jam",
+  "liveness_spoof_texture",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
