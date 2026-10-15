@@ -10,7 +10,8 @@ export type EngineId =
   | "moire_interference"
   | "optical_flow_jammer"
   | "segmentation_shatter"
-  | "fiducial_mimic";
+  | "fiducial_mimic"
+  | "depth_spoof";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

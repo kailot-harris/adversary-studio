@@ -20,6 +20,7 @@ const ENGINE_IDS: EngineId[] = [
   "optical_flow_jammer",
   "segmentation_shatter",
   "fiducial_mimic",
+  "depth_spoof",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
