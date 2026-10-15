@@ -70,7 +70,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `liveness_spoof_texture` — built
 - [x] `gait_scramble` — built
 - [ ] `jpeg_dct_bloom`
-- [ ] `rolling_shutter_tear`
+- [x] `rolling_shutter_tear` — built
 - [ ] `codec_macroblock_decoy`
 - [ ] `nerf_view_inconsistency`
 - [ ] `point_cloud_static`
