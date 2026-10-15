@@ -41,6 +41,7 @@ const ENGINE_IDS: EngineId[] = [
   "steganalysis_noise_bed",
   "watermark_collision",
   "crowd_count_decoy",
+  "action_recognition_jitter",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

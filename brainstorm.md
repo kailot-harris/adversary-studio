@@ -79,4 +79,4 @@ edge/orientation filters (`gabor_grating`).
 - [x] `steganalysis_noise_bed` — built
 - [x] `watermark_collision` — built
 - [x] `crowd_count_decoy` — built
-- [ ] `action_recognition_jitter`
+- [x] `action_recognition_jitter` — built

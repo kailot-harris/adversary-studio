@@ -31,7 +31,8 @@ export type EngineId =
   | "gan_fingerprint_mask"
   | "steganalysis_noise_bed"
   | "watermark_collision"
-  | "crowd_count_decoy";
+  | "crowd_count_decoy"
+  | "action_recognition_jitter";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
