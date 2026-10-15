@@ -21,9 +21,15 @@ export default function EngineSelector({ engine, onEngineChange }: Props) {
   // native single-open-group behavior (Chrome/Firefox/Safari all support
   // shared-`name` <details> exclusivity as of 2024), so this alone keeps
   // the "single category open at a time" invariant intact on expand too.
-  const handleOuterToggle = () => {
+  //
+  // React's synthetic `onToggle` re-fires this handler for inner category
+  // <details> toggles too, even though the native `toggle` event doesn't
+  // bubble in the DOM — so without the target check below, opening any
+  // other category immediately gets stomped back to the current engine's
+  // category on every click.
+  const handleOuterToggle = (e: React.SyntheticEvent<HTMLDetailsElement>) => {
     const outer = outerRef.current;
-    if (!outer || !outer.open) return;
+    if (!outer || e.target !== outer || !outer.open) return;
     const current = categoryOf(engine);
     const target = categoryRefs.current[current.id];
     if (target) target.open = true;
