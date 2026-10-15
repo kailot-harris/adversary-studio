@@ -28,7 +28,8 @@ export type EngineId =
   | "nerf_view_inconsistency"
   | "point_cloud_static"
   | "slam_feature_desert"
-  | "gan_fingerprint_mask";
+  | "gan_fingerprint_mask"
+  | "steganalysis_noise_bed";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

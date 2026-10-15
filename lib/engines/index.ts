@@ -26,6 +26,7 @@ import { nerfViewInconsistency } from "./nerfViewInconsistency";
 import { pointCloudStatic } from "./pointCloudStatic";
 import { slamFeatureDesert } from "./slamFeatureDesert";
 import { ganFingerprintMask } from "./ganFingerprintMask";
+import { steganalysisNoiseBed } from "./steganalysisNoiseBed";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -57,6 +58,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   point_cloud_static: pointCloudStatic,
   slam_feature_desert: slamFeatureDesert,
   gan_fingerprint_mask: ganFingerprintMask,
+  steganalysis_noise_bed: steganalysisNoiseBed,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -88,6 +90,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "point_cloud_static",
   "slam_feature_desert",
   "gan_fingerprint_mask",
+  "steganalysis_noise_bed",
 ];
 
 export * from "./types";

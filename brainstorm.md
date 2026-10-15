@@ -76,7 +76,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `point_cloud_static` — built
 - [x] `slam_feature_desert` — built
 - [x] `gan_fingerprint_mask` — built
-- [ ] `steganalysis_noise_bed`
+- [x] `steganalysis_noise_bed` — built
 - [ ] `watermark_collision`
 - [ ] `crowd_count_decoy`
 - [ ] `action_recognition_jitter`
