@@ -3,10 +3,14 @@
 Written 2026-10-15, after the 32-engine milestone (17 engines from the prior
 HANDOFF + 15 new engines built this session via the `subagent-brief` skill's
 batch mode across 4 sequential sub-batches of up to 4 parallel subagents
-each, every engine in its own `git worktree`). **This session exhausted
-`brainstorm.md`'s entire backlog — there are zero unbuilt engine ideas left
-in the file as of this writing.** For whoever picks this up next — human or
-fresh agent, no prior session context assumed.
+each, every engine in its own `git worktree`) and a follow-up UI-planning
+pass later the same session. **`brainstorm.md`'s engine-idea backlog is
+fully exhausted — zero unbuilt ideas remain.** Instead, this session closed
+by designing and writing a **staged, unstarted implementation plan** for
+restructuring the engine picker — see `ENGINE_SELECTOR_PLAN.md` at the repo
+root, committed but **not yet implemented** (Stage 0 of 6 hasn't started).
+For whoever picks this up next — human or fresh agent, no prior session
+context assumed.
 
 ## What this project is
 
@@ -27,7 +31,7 @@ the project root, which lists engine ideas with a checklist of built vs. not
 built. **As of this writing, every single checklist line in that file is
 checked** — there is no unbuilt backlog remaining. If you're picking this
 project up to add more engines, you'll need to brainstorm new ideas first
-(see "Concrete next step," option B). There is no architecture doc beyond
+(see "Concrete next step," option C). There is no architecture doc beyond
 this HANDOFF and the code itself — read the code directly rather than
 looking for a design doc that doesn't exist.
 
@@ -314,15 +318,28 @@ cleanly every time:
 
 ## Concrete next step
 
-**`brainstorm.md`'s backlog is now completely exhausted** — every idea ever
-written into that file has been built. Options, in order of what's likely
-most valuable:
+**A. Execute `ENGINE_SELECTOR_PLAN.md` (recommended — fully staged, zero
+open decisions, not started).** This session designed a 5-category
+reorganization of the 32 engines (Biometric & Identity, Detector & Scene
+Analysis, Sensor & 3D Capture, Classifier & Perturbation, Codec &
+Forensics — each ≤7 engines) and wrote a 6-stage build plan for a
+collapsed-by-default, mobile-aware accordion engine picker to replace
+`ControlPanel.tsx`'s current flat 32-button list. The plan is committed at
+the repo root (`ENGINE_SELECTOR_PLAN.md`) but **no stage has been started**
+— Stage 0 (new `lib/engines/categories.ts` data-layer file) is the literal
+next unit of work. Read that file in full before starting; it already
+specifies exact file-level changes, exit criteria per stage, and an explicit
+"out of scope" list (don't touch `lib/urlState.ts`/`types.ts`/`index.ts`'s
+persisted shape, don't re-theme `brainstorm.md`'s headers to match unless
+separately asked).
 
-**A. Visual verification debt (recommended, and now very overdue).** Nobody
-has ever looked at any of the 32 engines rendered in a browser, across three
-full sessions of additions. Start `npm run dev`, open the app, and click
-through all 32 engine tabs, reroll a few times per engine, and sanity-check:
-- All 15 engines built this session — none has ever been rendered.
+**B. Visual verification debt (still outstanding, now very overdue).**
+Nobody has ever looked at any of the 32 engines rendered in a browser,
+across three full sessions of additions. Start `npm run dev`, open the app,
+and click through all 32 engine tabs, reroll a few times per engine, and
+sanity-check:
+- All 15 engines built in the prior part of this session — none has ever
+  been rendered.
 - `segmentation_shatter`, `depth_spoof`, and `moire_interference` carry
   flags from even earlier sessions for render-time/visual-correctness risk
   that have never been cleared.
@@ -332,18 +349,20 @@ through all 32 engine tabs, reroll a few times per engine, and sanity-check:
   correctly now that there are 32 engines instead of 17 — the core
   "determinism" requirement and still never end-to-end verified in a
   browser.
+- Note: Stage 5 of `ENGINE_SELECTOR_PLAN.md` folds a pass of this same
+  checklist into the UI-restructure verification step, so doing option A
+  first means this gets partially covered as a side effect.
 
-**B. Brainstorm a new backlog.** With zero unbuilt ideas left, continuing the
-engine-building pattern requires generating new CV-subsystem-confusion ideas
-first — pick new subsystems not yet covered (the existing headers span
-detection/tracking, sensor-level, perturbation-style, face/landmark,
-biometric/liveness, compression/codec, 3D/geometric, forensics/generative-
-detection, and temporal/motion; a fresh session could look for CV subsystems
-outside those nine, e.g. OCR-adjacent, audio-visual sync, or multi-camera
-calibration attacks) before "The reusable workflow" above has anything to
-act on.
+**C. Brainstorm a new engine-idea backlog.** `brainstorm.md`'s idea list is
+fully exhausted (0 unchecked lines) — continuing the engine-building pattern
+("The reusable workflow" section above) requires generating new CV-
+subsystem-confusion ideas first. Pick subsystems not yet covered (existing
+headers span detection/tracking, sensor-level, perturbation-style,
+face/landmark, biometric/liveness, compression/codec, 3D/geometric,
+forensics/generative-detection, and temporal/motion — try OCR-adjacent,
+audio-visual sync, or multi-camera calibration attacks for new territory).
 
-**C. The deferred proposal.** A prior session's user once proposed (and
+**D. The deferred proposal.** A prior session's user once proposed (and
 explicitly deferred) a 5th "Harmonic Resonance" slider and a WebGL/GLSL
 rendering backend. Neither has a design decision yet — if picking this up,
 start with a scope conversation (e.g. via the `spec-interview` skill), not
