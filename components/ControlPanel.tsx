@@ -1,8 +1,8 @@
 "use client";
 
 import { Dices, Download, Link2, Check } from "lucide-react";
-import { ENGINE_ORDER, ENGINES } from "@/lib/engines";
 import { EngineId, EngineParams } from "@/lib/engines/types";
+import EngineSelector from "./EngineSelector";
 
 interface Props {
   engine: EngineId;
@@ -33,25 +33,7 @@ export default function ControlPanel({
 
   return (
     <div className="glass-panel rounded-lg p-5 flex flex-col gap-6 w-full md:w-80 shrink-0">
-      <div>
-        <div className="text-[10px] tracking-widest text-cyan-glow/70 mb-2">ENGINE</div>
-        <div className="grid grid-cols-1 gap-1">
-          {ENGINE_ORDER.map((id) => (
-            <button
-              key={id}
-              onClick={() => onEngineChange(id)}
-              className={`text-left px-3 py-2 rounded text-xs border transition-colors ${
-                engine === id
-                  ? "border-cyan-glow bg-cyan-glow/10 text-cyan-glow"
-                  : "border-white/10 text-neutral-400 hover:border-white/30 hover:text-neutral-200"
-              }`}
-            >
-              {ENGINES[id].label}
-            </button>
-          ))}
-        </div>
-        <p className="mt-2 text-[11px] text-neutral-500 leading-snug">{ENGINES[engine].description}</p>
-      </div>
+      <EngineSelector engine={engine} onEngineChange={onEngineChange} />
 
       <div className="border-t border-white/10 pt-4">
         <div className="text-[10px] tracking-widest text-magenta-glow/70 mb-2">SEED</div>
