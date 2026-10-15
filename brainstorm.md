@@ -29,6 +29,6 @@ edge/orientation filters (`gabor_grating`).
 - [x] `segmentation_shatter` — built
 - [ ] `fiducial_mimic`
 - [ ] `depth_spoof`
-- [ ] `thermal_decoy`
+- [x] `thermal_decoy` — built
 - [ ] `ocr_glitch`
 - [ ] `face_mesh_scramble`

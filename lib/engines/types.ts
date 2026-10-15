@@ -9,7 +9,8 @@ export type EngineId =
   | "fgsm_noise"
   | "moire_interference"
   | "optical_flow_jammer"
-  | "segmentation_shatter";
+  | "segmentation_shatter"
+  | "thermal_decoy";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

@@ -19,6 +19,7 @@ const ENGINE_IDS: EngineId[] = [
   "moire_interference",
   "optical_flow_jammer",
   "segmentation_shatter",
+  "thermal_decoy",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
