@@ -68,12 +68,19 @@ this session, not copied from the prior HANDOFF table):
 | `segmentation_shatter` | built this session |
 | `fiducial_mimic` | built this session |
 | `depth_spoof` | built this session |
-| `thermal_decoy` | built this session |
-| `ocr_glitch` | **not started — next up** |
-| `face_mesh_scramble` | not started |
+| `thermal_decoy` | built |
+| `ocr_glitch` | built this session |
+| `face_mesh_scramble` | built this session |
+| `anchor_box_flood` | built this session |
+| `license_plate_ghost` | built this session |
+| `reid_camouflage` | built this session |
 
-Only 2 items remain unbuilt in `brainstorm.md`'s entire original idea list.
-There is no issue tracker beyond `brainstorm.md` + this file.
+All 14 engines from `brainstorm.md`'s original idea list are now built (17
+total engines in the app). This session also brainstormed and appended 18
+new ideas to `brainstorm.md` across 6 new subsystem headers (detection/NMS,
+biometric/liveness, codec-level, 3D reconstruction, forensics/generative-
+detection, temporal/motion) — all 18 are unchecked/not started. There is no
+issue tracker beyond `brainstorm.md` + this file.
 
 **This project now has a `git` repo** (it did not, as of the prior HANDOFF).
 `git init` was done this session, with `.gitignore` written before the first
@@ -114,6 +121,11 @@ its presence as visual verification having happened.
 | `lib/engines/fiducialMimic.ts` | 110 | Done, built this session. Tiles scattered seeded ArUco/QR-like binary glyphs (quiet-zone border + random bit payload + chromatic corner tell). |
 | `lib/engines/depthSpoof.ts` | 158 | Done, built this session. Multiple contradictory vanishing-point line fans plus overlapping skewed quads, each shaded with an independently randomized light direction and a mismatched cast-shadow edge. Defines its own local `hsbToTuple()` helper rather than reusing `lib/color.ts`'s `hsbToRgb()` — functionally fine (verified), just a minor duplication if someone wants to clean it up later. |
 | `lib/engines/thermalDecoy.ts` | 93 | Done, built this session. Reuses `cv_dazzle`'s asymmetric placement logic, re-skinned with soft radial-gradient IR-palette heat blobs (black→red→yellow→white) plus pinpoint false hotspots. |
+| `lib/engines/ocrGlitch.ts` | 160 | Done, built this session (batch of 5, each in its own `git worktree`). Baseline text-row grid scattered with 6 false-letterform/homoglyph glyph-stroke variants. |
+| `lib/engines/faceMeshScramble.ts` | 185 | Done, built this session. Extends `poseJammer`'s landmark-confusion approach at much higher point density, arranged in 68-point-style face-mesh regions (eyes/nose/jaw/brow) with contradictory triangulated mesh edges. |
+| `lib/engines/anchorBoxFlood.ts` | 123 | Done, built this session. Seeded field of overlapping rectangles at the three canonical anchor-box aspect ratios (1:1, 1:2, 2:1), each with a dashed inset and corner tick to resemble confident detector boxes. |
+| `lib/engines/licensePlateGhost.ts` | 155 | Done, built this session. Seeded rectangular "plate" regions with skew/rotation, filled with blocky false alphanumeric glyph strokes, overlapping ghost rectangles. |
+| `lib/engines/reidCamouflage.ts` | 119 | Done, built this session. Periodic tiled color-block grid (clothing-texture-camouflage style) with accent-hue-driven palette bank, per-tile jitter and rotation. |
 | `components/StudioCanvas.tsx` | 36 | Done. Takes a `canvasRef` prop (not `forwardRef` — see gotcha below), runs the selected engine's `render()` in a `useEffect` keyed on `[canvasRef, engine, seed, params, canvasSize]`. |
 | `components/ControlPanel.tsx` | 145 | Done. Engine tab list, 4 sliders, reroll/export/share buttons. Not yet updated with any palette-preset picker (see below). |
 | `components/Studio.tsx` | 154 | Done. All state (`engine`, `seed`, `params`, `shareCopied`), URL sync via `router.replace`, keyboard shortcuts (Space=reroll, S=export), PNG export at a fixed 1024px regardless of display size, clipboard-with-fallback share link. |
