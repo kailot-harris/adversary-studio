@@ -10,6 +10,7 @@ import { segmentationShatter } from "./segmentationShatter";
 import { fiducialMimic } from "./fiducialMimic";
 import { depthSpoof } from "./depthSpoof";
 import { thermalDecoy } from "./thermalDecoy";
+import { anchorBoxFlood } from "./anchorBoxFlood";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -25,6 +26,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   fiducial_mimic: fiducialMimic,
   depth_spoof: depthSpoof,
   thermal_decoy: thermalDecoy,
+  anchor_box_flood: anchorBoxFlood,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -40,6 +42,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "fiducial_mimic",
   "depth_spoof",
   "thermal_decoy",
+  "anchor_box_flood",
 ];
 
 export * from "./types";

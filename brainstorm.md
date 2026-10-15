@@ -62,7 +62,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `thermal_decoy` — built
 - [ ] `ocr_glitch`
 - [ ] `face_mesh_scramble`
-- [ ] `anchor_box_flood`
+- [x] `anchor_box_flood` — built
 - [ ] `license_plate_ghost`
 - [ ] `reid_camouflage`
 - [ ] `saliency_inversion`
