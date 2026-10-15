@@ -28,6 +28,7 @@ import { slamFeatureDesert } from "./slamFeatureDesert";
 import { ganFingerprintMask } from "./ganFingerprintMask";
 import { steganalysisNoiseBed } from "./steganalysisNoiseBed";
 import { watermarkCollision } from "./watermarkCollision";
+import { crowdCountDecoy } from "./crowdCountDecoy";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -61,6 +62,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   gan_fingerprint_mask: ganFingerprintMask,
   steganalysis_noise_bed: steganalysisNoiseBed,
   watermark_collision: watermarkCollision,
+  crowd_count_decoy: crowdCountDecoy,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -94,6 +96,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "gan_fingerprint_mask",
   "steganalysis_noise_bed",
   "watermark_collision",
+  "crowd_count_decoy",
 ];
 
 export * from "./types";
