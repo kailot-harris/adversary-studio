@@ -25,6 +25,7 @@ const ENGINE_IDS: EngineId[] = [
   "ocr_glitch",
   "face_mesh_scramble",
   "anchor_box_flood",
+  "license_plate_ghost",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

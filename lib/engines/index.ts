@@ -13,6 +13,7 @@ import { thermalDecoy } from "./thermalDecoy";
 import { ocrGlitch } from "./ocrGlitch";
 import { faceMeshScramble } from "./faceMeshScramble";
 import { anchorBoxFlood } from "./anchorBoxFlood";
+import { licensePlateGhost } from "./licensePlateGhost";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -31,6 +32,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   ocr_glitch: ocrGlitch,
   face_mesh_scramble: faceMeshScramble,
   anchor_box_flood: anchorBoxFlood,
+  license_plate_ghost: licensePlateGhost,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -49,6 +51,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "ocr_glitch",
   "face_mesh_scramble",
   "anchor_box_flood",
+  "license_plate_ghost",
 ];
 
 export * from "./types";
