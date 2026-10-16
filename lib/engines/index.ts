@@ -46,6 +46,7 @@ import { chromaSubsamplingBleed } from "./chromaSubsamplingBleed";
 import { keyframeFlickerDecoy } from "./keyframeFlickerDecoy";
 import { epipolarMismatchPattern } from "./epipolarMismatchPattern";
 import { structureFromMotionFeatureSwap } from "./structureFromMotionFeatureSwap";
+import { temporalFlickerJam } from "./temporalFlickerJam";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -97,6 +98,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   keyframe_flicker_decoy: keyframeFlickerDecoy,
   epipolar_mismatch_pattern: epipolarMismatchPattern,
   structure_from_motion_feature_swap: structureFromMotionFeatureSwap,
+  temporal_flicker_jam: temporalFlickerJam,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -148,6 +150,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "keyframe_flicker_decoy",
   "epipolar_mismatch_pattern",
   "structure_from_motion_feature_swap",
+  "temporal_flicker_jam",
 ];
 
 export * from "./types";
