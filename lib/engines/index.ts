@@ -55,6 +55,7 @@ import { barcode1dBloom } from "./barcode1dBloom";
 import { qrFinderPatternMimic } from "./qrFinderPatternMimic";
 import { pageCurlShadowDecoy } from "./pageCurlShadowDecoy";
 import { tableGridMimic } from "./tableGridMimic";
+import { checkerboardCalibrationCollision } from "./checkerboardCalibrationCollision";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -115,6 +116,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   qr_finder_pattern_mimic: qrFinderPatternMimic,
   page_curl_shadow_decoy: pageCurlShadowDecoy,
   table_grid_mimic: tableGridMimic,
+  checkerboard_calibration_collision: checkerboardCalibrationCollision,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -175,6 +177,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "qr_finder_pattern_mimic",
   "page_curl_shadow_decoy",
   "table_grid_mimic",
+  "checkerboard_calibration_collision",
 ];
 
 export * from "./types";
