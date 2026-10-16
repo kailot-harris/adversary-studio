@@ -49,6 +49,7 @@ const ENGINE_IDS: EngineId[] = [
   "universal_patch_tile",
   "gradient_sign_mosaic",
   "expression_au_jam",
+  "age_gender_attribute_decoy",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

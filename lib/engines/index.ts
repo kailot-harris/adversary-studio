@@ -37,6 +37,7 @@ import { vignetteFalloffDecoy } from "./vignetteFalloffDecoy";
 import { universalPatchTile } from "./universalPatchTile";
 import { gradientSignMosaic } from "./gradientSignMosaic";
 import { expressionAuJam } from "./expressionAuJam";
+import { ageGenderAttributeDecoy } from "./ageGenderAttributeDecoy";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -79,6 +80,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   universal_patch_tile: universalPatchTile,
   gradient_sign_mosaic: gradientSignMosaic,
   expression_au_jam: expressionAuJam,
+  age_gender_attribute_decoy: ageGenderAttributeDecoy,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -121,6 +123,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "universal_patch_tile",
   "gradient_sign_mosaic",
   "expression_au_jam",
+  "age_gender_attribute_decoy",
 ];
 
 export * from "./types";
