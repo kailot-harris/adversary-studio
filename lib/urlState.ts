@@ -57,6 +57,7 @@ const ENGINE_IDS: EngineId[] = [
   "chroma_subsampling_bleed",
   "keyframe_flicker_decoy",
   "epipolar_mismatch_pattern",
+  "structure_from_motion_feature_swap",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
