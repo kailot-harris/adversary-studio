@@ -48,7 +48,8 @@ export type EngineId =
   | "chroma_subsampling_bleed"
   | "keyframe_flicker_decoy"
   | "epipolar_mismatch_pattern"
-  | "structure_from_motion_feature_swap";
+  | "structure_from_motion_feature_swap"
+  | "prnu_noise_mimic";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
