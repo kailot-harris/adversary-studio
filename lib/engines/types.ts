@@ -54,7 +54,8 @@ export type EngineId =
   | "frame_interpolation_ghost"
   | "temporal_flicker_jam"
   | "doc_corner_fiducial_jam"
-  | "barcode_1d_bloom";
+  | "barcode_1d_bloom"
+  | "qr_finder_pattern_mimic";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

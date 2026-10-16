@@ -52,6 +52,7 @@ import { frameInterpolationGhost } from "./frameInterpolationGhost";
 import { temporalFlickerJam } from "./temporalFlickerJam";
 import { docCornerFiducialJam } from "./docCornerFiducialJam";
 import { barcode1dBloom } from "./barcode1dBloom";
+import { qrFinderPatternMimic } from "./qrFinderPatternMimic";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -109,6 +110,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   temporal_flicker_jam: temporalFlickerJam,
   doc_corner_fiducial_jam: docCornerFiducialJam,
   barcode_1d_bloom: barcode1dBloom,
+  qr_finder_pattern_mimic: qrFinderPatternMimic,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -166,6 +168,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "temporal_flicker_jam",
   "doc_corner_fiducial_jam",
   "barcode_1d_bloom",
+  "qr_finder_pattern_mimic",
 ];
 
 export * from "./types";
