@@ -166,7 +166,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `exposure_metering_trap` — built
 - [x] `tracklet_id_swap_pattern` — built
 - [x] `reacquisition_decoy_trail` — built
-- [ ] `track_merge_split_bait`
+- [x] `track_merge_split_bait` — built
 - [ ] `night_vision_gain_bloom`
 - [ ] `ir_hotspot_decoy`
 - [ ] `low_light_noise_floor_mimic`
