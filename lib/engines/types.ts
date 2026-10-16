@@ -33,7 +33,8 @@ export type EngineId =
   | "watermark_collision"
   | "crowd_count_decoy"
   | "action_recognition_jitter"
-  | "nms_overlap_flood";
+  | "nms_overlap_flood"
+  | "rolling_bayer_demosaic_jam";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

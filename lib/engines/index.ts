@@ -31,6 +31,7 @@ import { watermarkCollision } from "./watermarkCollision";
 import { crowdCountDecoy } from "./crowdCountDecoy";
 import { actionRecognitionJitter } from "./actionRecognitionJitter";
 import { nmsOverlapFlood } from "./nmsOverlapFlood";
+import { rollingBayerDemosaicJam } from "./rollingBayerDemosaicJam";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -67,6 +68,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   crowd_count_decoy: crowdCountDecoy,
   action_recognition_jitter: actionRecognitionJitter,
   nms_overlap_flood: nmsOverlapFlood,
+  rolling_bayer_demosaic_jam: rollingBayerDemosaicJam,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -103,6 +105,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "crowd_count_decoy",
   "action_recognition_jitter",
   "nms_overlap_flood",
+  "rolling_bayer_demosaic_jam",
 ];
 
 export * from "./types";
