@@ -69,6 +69,7 @@ import { reacquisitionDecoyTrail } from "./reacquisitionDecoyTrail";
 import { trackMergeSplitBait } from "./trackMergeSplitBait";
 import { nightVisionGainBloom } from "./nightVisionGainBloom";
 import { irHotspotDecoy } from "./irHotspotDecoy";
+import { lowLightNoiseFloorMimic } from "./lowLightNoiseFloorMimic";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -143,6 +144,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   track_merge_split_bait: trackMergeSplitBait,
   night_vision_gain_bloom: nightVisionGainBloom,
   ir_hotspot_decoy: irHotspotDecoy,
+  low_light_noise_floor_mimic: lowLightNoiseFloorMimic,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -217,6 +219,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "track_merge_split_bait",
   "night_vision_gain_bloom",
   "ir_hotspot_decoy",
+  "low_light_noise_floor_mimic",
 ];
 
 export * from "./types";

@@ -81,6 +81,7 @@ const ENGINE_IDS: EngineId[] = [
   "track_merge_split_bait",
   "night_vision_gain_bloom",
   "ir_hotspot_decoy",
+  "low_light_noise_floor_mimic",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

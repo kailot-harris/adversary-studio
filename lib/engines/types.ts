@@ -71,7 +71,8 @@ export type EngineId =
   | "reacquisition_decoy_trail"
   | "track_merge_split_bait"
   | "night_vision_gain_bloom"
-  | "ir_hotspot_decoy";
+  | "ir_hotspot_decoy"
+  | "low_light_noise_floor_mimic";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

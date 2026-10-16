@@ -169,4 +169,4 @@ edge/orientation filters (`gabor_grating`).
 - [x] `track_merge_split_bait` — built
 - [x] `night_vision_gain_bloom` — built
 - [x] `ir_hotspot_decoy` — built
-- [ ] `low_light_noise_floor_mimic`
+- [x] `low_light_noise_floor_mimic` — built
