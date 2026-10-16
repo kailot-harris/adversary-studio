@@ -79,6 +79,7 @@ const ENGINE_IDS: EngineId[] = [
   "tracklet_id_swap_pattern",
   "reacquisition_decoy_trail",
   "track_merge_split_bait",
+  "night_vision_gain_bloom",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

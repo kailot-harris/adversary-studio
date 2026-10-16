@@ -67,6 +67,7 @@ import { exposureMeteringTrap } from "./exposureMeteringTrap";
 import { trackletIdSwapPattern } from "./trackletIdSwapPattern";
 import { reacquisitionDecoyTrail } from "./reacquisitionDecoyTrail";
 import { trackMergeSplitBait } from "./trackMergeSplitBait";
+import { nightVisionGainBloom } from "./nightVisionGainBloom";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -139,6 +140,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   tracklet_id_swap_pattern: trackletIdSwapPattern,
   reacquisition_decoy_trail: reacquisitionDecoyTrail,
   track_merge_split_bait: trackMergeSplitBait,
+  night_vision_gain_bloom: nightVisionGainBloom,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -211,6 +213,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "tracklet_id_swap_pattern",
   "reacquisition_decoy_trail",
   "track_merge_split_bait",
+  "night_vision_gain_bloom",
 ];
 
 export * from "./types";
