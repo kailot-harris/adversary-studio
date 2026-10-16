@@ -158,7 +158,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `checkerboard_calibration_collision` — built
 - [x] `stereo_disparity_decoy` — built
 - [x] `vanishing_point_scramble` — built
-- [ ] `lens_distortion_grid_jam`
+- [x] `lens_distortion_grid_jam` — built
 - [ ] `rig_baseline_mismatch_tile`
 - [ ] `white_balance_jam`
 - [ ] `hdr_bracket_ghost`
