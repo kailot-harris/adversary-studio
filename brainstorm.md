@@ -162,7 +162,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `rig_baseline_mismatch_tile` — built
 - [x] `white_balance_jam` — built
 - [x] `hdr_bracket_ghost` — built
-- [ ] `color_checker_decoy`
+- [x] `color_checker_decoy` — built
 - [ ] `exposure_metering_trap`
 - [ ] `tracklet_id_swap_pattern`
 - [ ] `reacquisition_decoy_trail`
