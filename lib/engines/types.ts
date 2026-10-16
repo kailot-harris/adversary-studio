@@ -67,7 +67,8 @@ export type EngineId =
   | "hdr_bracket_ghost"
   | "color_checker_decoy"
   | "exposure_metering_trap"
-  | "tracklet_id_swap_pattern";
+  | "tracklet_id_swap_pattern"
+  | "reacquisition_decoy_trail";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
