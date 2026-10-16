@@ -43,6 +43,7 @@ import { poseConfidenceFlood } from "./poseConfidenceFlood";
 import { fingerprintRidgeNoise } from "./fingerprintRidgeNoise";
 import { veinPatternJam } from "./veinPatternJam";
 import { chromaSubsamplingBleed } from "./chromaSubsamplingBleed";
+import { keyframeFlickerDecoy } from "./keyframeFlickerDecoy";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -91,6 +92,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   fingerprint_ridge_noise: fingerprintRidgeNoise,
   vein_pattern_jam: veinPatternJam,
   chroma_subsampling_bleed: chromaSubsamplingBleed,
+  keyframe_flicker_decoy: keyframeFlickerDecoy,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -139,6 +141,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "fingerprint_ridge_noise",
   "vein_pattern_jam",
   "chroma_subsampling_bleed",
+  "keyframe_flicker_decoy",
 ];
 
 export * from "./types";
