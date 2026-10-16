@@ -30,6 +30,7 @@ import { steganalysisNoiseBed } from "./steganalysisNoiseBed";
 import { watermarkCollision } from "./watermarkCollision";
 import { crowdCountDecoy } from "./crowdCountDecoy";
 import { actionRecognitionJitter } from "./actionRecognitionJitter";
+import { bboxCornerBleed } from "./bboxCornerBleed";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -65,6 +66,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   watermark_collision: watermarkCollision,
   crowd_count_decoy: crowdCountDecoy,
   action_recognition_jitter: actionRecognitionJitter,
+  bbox_corner_bleed: bboxCornerBleed,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -100,6 +102,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "watermark_collision",
   "crowd_count_decoy",
   "action_recognition_jitter",
+  "bbox_corner_bleed",
 ];
 
 export * from "./types";

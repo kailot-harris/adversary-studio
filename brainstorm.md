@@ -131,7 +131,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `crowd_count_decoy` — built
 - [x] `action_recognition_jitter` — built
 - [ ] `nms_overlap_flood`
-- [ ] `bbox_corner_bleed`
+- [x] `bbox_corner_bleed` — built
 - [ ] `rolling_bayer_demosaic_jam`
 - [ ] `vignette_falloff_decoy`
 - [ ] `universal_patch_tile`

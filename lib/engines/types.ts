@@ -32,7 +32,8 @@ export type EngineId =
   | "steganalysis_noise_bed"
   | "watermark_collision"
   | "crowd_count_decoy"
-  | "action_recognition_jitter";
+  | "action_recognition_jitter"
+  | "bbox_corner_bleed";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

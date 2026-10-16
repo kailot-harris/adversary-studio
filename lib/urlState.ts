@@ -42,6 +42,7 @@ const ENGINE_IDS: EngineId[] = [
   "watermark_collision",
   "crowd_count_decoy",
   "action_recognition_jitter",
+  "bbox_corner_bleed",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
