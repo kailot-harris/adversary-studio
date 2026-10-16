@@ -60,6 +60,7 @@ import { stereoDisparityDecoy } from "./stereoDisparityDecoy";
 import { vanishingPointScramble } from "./vanishingPointScramble";
 import { lensDistortionGridJam } from "./lensDistortionGridJam";
 import { rigBaselineMismatchTile } from "./rigBaselineMismatchTile";
+import { whiteBalanceJam } from "./whiteBalanceJam";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -125,6 +126,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   vanishing_point_scramble: vanishingPointScramble,
   lens_distortion_grid_jam: lensDistortionGridJam,
   rig_baseline_mismatch_tile: rigBaselineMismatchTile,
+  white_balance_jam: whiteBalanceJam,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -190,6 +192,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "vanishing_point_scramble",
   "lens_distortion_grid_jam",
   "rig_baseline_mismatch_tile",
+  "white_balance_jam",
 ];
 
 export * from "./types";

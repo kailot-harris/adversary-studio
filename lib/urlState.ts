@@ -72,6 +72,7 @@ const ENGINE_IDS: EngineId[] = [
   "vanishing_point_scramble",
   "lens_distortion_grid_jam",
   "rig_baseline_mismatch_tile",
+  "white_balance_jam",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
