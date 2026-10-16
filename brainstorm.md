@@ -130,7 +130,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `watermark_collision` — built
 - [x] `crowd_count_decoy` — built
 - [x] `action_recognition_jitter` — built
-- [ ] `nms_overlap_flood`
+- [x] `nms_overlap_flood` — built
 - [ ] `bbox_corner_bleed`
 - [ ] `rolling_bayer_demosaic_jam`
 - [ ] `vignette_falloff_decoy`
