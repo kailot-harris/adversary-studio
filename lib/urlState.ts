@@ -63,6 +63,7 @@ const ENGINE_IDS: EngineId[] = [
   "frame_interpolation_ghost",
   "temporal_flicker_jam",
   "doc_corner_fiducial_jam",
+  "barcode_1d_bloom",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

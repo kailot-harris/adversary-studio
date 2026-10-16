@@ -151,7 +151,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `frame_interpolation_ghost` — built
 - [x] `temporal_flicker_jam` — built
 - [x] `doc_corner_fiducial_jam` — built
-- [ ] `barcode_1d_bloom`
+- [x] `barcode_1d_bloom` — built
 - [ ] `qr_finder_pattern_mimic`
 - [ ] `page_curl_shadow_decoy`
 - [ ] `table_grid_mimic`
