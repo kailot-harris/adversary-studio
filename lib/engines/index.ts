@@ -38,6 +38,7 @@ import { universalPatchTile } from "./universalPatchTile";
 import { gradientSignMosaic } from "./gradientSignMosaic";
 import { expressionAuJam } from "./expressionAuJam";
 import { ageGenderAttributeDecoy } from "./ageGenderAttributeDecoy";
+import { veinPatternJam } from "./veinPatternJam";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -81,6 +82,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   gradient_sign_mosaic: gradientSignMosaic,
   expression_au_jam: expressionAuJam,
   age_gender_attribute_decoy: ageGenderAttributeDecoy,
+  vein_pattern_jam: veinPatternJam,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -124,6 +126,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "gradient_sign_mosaic",
   "expression_au_jam",
   "age_gender_attribute_decoy",
+  "vein_pattern_jam",
 ];
 
 export * from "./types";
