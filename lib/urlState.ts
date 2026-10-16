@@ -45,6 +45,7 @@ const ENGINE_IDS: EngineId[] = [
   "nms_overlap_flood",
   "rolling_bayer_demosaic_jam",
   "bbox_corner_bleed",
+  "vignette_falloff_decoy",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
