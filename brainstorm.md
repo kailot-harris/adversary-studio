@@ -149,7 +149,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `jpeg_ghost_decoy` — built
 - [x] `prnu_noise_mimic` — built
 - [x] `frame_interpolation_ghost` — built
-- [ ] `temporal_flicker_jam`
+- [x] `temporal_flicker_jam` — built
 - [ ] `doc_corner_fiducial_jam`
 - [ ] `barcode_1d_bloom`
 - [ ] `qr_finder_pattern_mimic`

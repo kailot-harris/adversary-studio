@@ -49,6 +49,7 @@ import { structureFromMotionFeatureSwap } from "./structureFromMotionFeatureSwap
 import { jpegGhostDecoy } from "./jpegGhostDecoy";
 import { prnuNoiseMimic } from "./prnuNoiseMimic";
 import { frameInterpolationGhost } from "./frameInterpolationGhost";
+import { temporalFlickerJam } from "./temporalFlickerJam";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -103,6 +104,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   jpeg_ghost_decoy: jpegGhostDecoy,
   prnu_noise_mimic: prnuNoiseMimic,
   frame_interpolation_ghost: frameInterpolationGhost,
+  temporal_flicker_jam: temporalFlickerJam,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -157,6 +159,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "jpeg_ghost_decoy",
   "prnu_noise_mimic",
   "frame_interpolation_ghost",
+  "temporal_flicker_jam",
 ];
 
 export * from "./types";

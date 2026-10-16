@@ -51,7 +51,8 @@ export type EngineId =
   | "structure_from_motion_feature_swap"
   | "jpeg_ghost_decoy"
   | "prnu_noise_mimic"
-  | "frame_interpolation_ghost";
+  | "frame_interpolation_ghost"
+  | "temporal_flicker_jam";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

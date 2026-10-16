@@ -61,6 +61,7 @@ const ENGINE_IDS: EngineId[] = [
   "jpeg_ghost_decoy",
   "prnu_noise_mimic",
   "frame_interpolation_ghost",
+  "temporal_flicker_jam",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
