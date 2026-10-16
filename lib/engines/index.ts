@@ -66,6 +66,7 @@ import { colorCheckerDecoy } from "./colorCheckerDecoy";
 import { exposureMeteringTrap } from "./exposureMeteringTrap";
 import { trackletIdSwapPattern } from "./trackletIdSwapPattern";
 import { reacquisitionDecoyTrail } from "./reacquisitionDecoyTrail";
+import { trackMergeSplitBait } from "./trackMergeSplitBait";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -137,6 +138,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   exposure_metering_trap: exposureMeteringTrap,
   tracklet_id_swap_pattern: trackletIdSwapPattern,
   reacquisition_decoy_trail: reacquisitionDecoyTrail,
+  track_merge_split_bait: trackMergeSplitBait,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -208,6 +210,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "exposure_metering_trap",
   "tracklet_id_swap_pattern",
   "reacquisition_decoy_trail",
+  "track_merge_split_bait",
 ];
 
 export * from "./types";
