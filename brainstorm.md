@@ -163,7 +163,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `white_balance_jam` — built
 - [x] `hdr_bracket_ghost` — built
 - [ ] `color_checker_decoy`
-- [ ] `exposure_metering_trap`
+- [x] `exposure_metering_trap` — built
 - [ ] `tracklet_id_swap_pattern`
 - [ ] `reacquisition_decoy_trail`
 - [ ] `track_merge_split_bait`

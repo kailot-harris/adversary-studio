@@ -62,6 +62,7 @@ import { lensDistortionGridJam } from "./lensDistortionGridJam";
 import { rigBaselineMismatchTile } from "./rigBaselineMismatchTile";
 import { whiteBalanceJam } from "./whiteBalanceJam";
 import { hdrBracketGhost } from "./hdrBracketGhost";
+import { exposureMeteringTrap } from "./exposureMeteringTrap";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -129,6 +130,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   rig_baseline_mismatch_tile: rigBaselineMismatchTile,
   white_balance_jam: whiteBalanceJam,
   hdr_bracket_ghost: hdrBracketGhost,
+  exposure_metering_trap: exposureMeteringTrap,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -196,6 +198,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "rig_baseline_mismatch_tile",
   "white_balance_jam",
   "hdr_bracket_ghost",
+  "exposure_metering_trap",
 ];
 
 export * from "./types";
