@@ -76,6 +76,7 @@ const ENGINE_IDS: EngineId[] = [
   "hdr_bracket_ghost",
   "color_checker_decoy",
   "exposure_metering_trap",
+  "tracklet_id_swap_pattern",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

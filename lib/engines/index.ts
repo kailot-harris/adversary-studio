@@ -64,6 +64,7 @@ import { whiteBalanceJam } from "./whiteBalanceJam";
 import { hdrBracketGhost } from "./hdrBracketGhost";
 import { colorCheckerDecoy } from "./colorCheckerDecoy";
 import { exposureMeteringTrap } from "./exposureMeteringTrap";
+import { trackletIdSwapPattern } from "./trackletIdSwapPattern";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -133,6 +134,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   hdr_bracket_ghost: hdrBracketGhost,
   color_checker_decoy: colorCheckerDecoy,
   exposure_metering_trap: exposureMeteringTrap,
+  tracklet_id_swap_pattern: trackletIdSwapPattern,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -202,6 +204,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "hdr_bracket_ghost",
   "color_checker_decoy",
   "exposure_metering_trap",
+  "tracklet_id_swap_pattern",
 ];
 
 export * from "./types";
