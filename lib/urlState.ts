@@ -74,6 +74,7 @@ const ENGINE_IDS: EngineId[] = [
   "rig_baseline_mismatch_tile",
   "white_balance_jam",
   "hdr_bracket_ghost",
+  "reacquisition_decoy_trail",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
