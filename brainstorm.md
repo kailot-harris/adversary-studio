@@ -160,7 +160,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `vanishing_point_scramble` — built
 - [ ] `lens_distortion_grid_jam`
 - [ ] `rig_baseline_mismatch_tile`
-- [ ] `white_balance_jam`
+- [x] `white_balance_jam` — built
 - [ ] `hdr_bracket_ghost`
 - [ ] `color_checker_decoy`
 - [ ] `exposure_metering_trap`
