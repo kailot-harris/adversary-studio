@@ -53,6 +53,7 @@ import { temporalFlickerJam } from "./temporalFlickerJam";
 import { docCornerFiducialJam } from "./docCornerFiducialJam";
 import { barcode1dBloom } from "./barcode1dBloom";
 import { qrFinderPatternMimic } from "./qrFinderPatternMimic";
+import { pageCurlShadowDecoy } from "./pageCurlShadowDecoy";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -111,6 +112,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   doc_corner_fiducial_jam: docCornerFiducialJam,
   barcode_1d_bloom: barcode1dBloom,
   qr_finder_pattern_mimic: qrFinderPatternMimic,
+  page_curl_shadow_decoy: pageCurlShadowDecoy,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -169,6 +171,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "doc_corner_fiducial_jam",
   "barcode_1d_bloom",
   "qr_finder_pattern_mimic",
+  "page_curl_shadow_decoy",
 ];
 
 export * from "./types";
