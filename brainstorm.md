@@ -139,7 +139,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `expression_au_jam` — built
 - [x] `age_gender_attribute_decoy` — built
 - [ ] `vehicle_make_model_decoy`
-- [ ] `pose_confidence_flood`
+- [x] `pose_confidence_flood` — built
 - [ ] `fingerprint_ridge_noise`
 - [ ] `vein_pattern_jam`
 - [ ] `chroma_subsampling_bleed`
