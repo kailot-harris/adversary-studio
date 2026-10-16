@@ -42,6 +42,7 @@ import { vehicleMakeModelDecoy } from "./vehicleMakeModelDecoy";
 import { poseConfidenceFlood } from "./poseConfidenceFlood";
 import { fingerprintRidgeNoise } from "./fingerprintRidgeNoise";
 import { veinPatternJam } from "./veinPatternJam";
+import { structureFromMotionFeatureSwap } from "./structureFromMotionFeatureSwap";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -89,6 +90,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   pose_confidence_flood: poseConfidenceFlood,
   fingerprint_ridge_noise: fingerprintRidgeNoise,
   vein_pattern_jam: veinPatternJam,
+  structure_from_motion_feature_swap: structureFromMotionFeatureSwap,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -136,6 +138,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "pose_confidence_flood",
   "fingerprint_ridge_noise",
   "vein_pattern_jam",
+  "structure_from_motion_feature_swap",
 ];
 
 export * from "./types";

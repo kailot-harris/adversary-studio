@@ -44,7 +44,8 @@ export type EngineId =
   | "vehicle_make_model_decoy"
   | "pose_confidence_flood"
   | "fingerprint_ridge_noise"
-  | "vein_pattern_jam";
+  | "vein_pattern_jam"
+  | "structure_from_motion_feature_swap";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
