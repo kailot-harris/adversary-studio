@@ -80,6 +80,7 @@ const ENGINE_IDS: EngineId[] = [
   "reacquisition_decoy_trail",
   "track_merge_split_bait",
   "night_vision_gain_bloom",
+  "ir_hotspot_decoy",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

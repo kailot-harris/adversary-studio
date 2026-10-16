@@ -70,7 +70,8 @@ export type EngineId =
   | "tracklet_id_swap_pattern"
   | "reacquisition_decoy_trail"
   | "track_merge_split_bait"
-  | "night_vision_gain_bloom";
+  | "night_vision_gain_bloom"
+  | "ir_hotspot_decoy";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
