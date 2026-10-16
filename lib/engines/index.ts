@@ -56,6 +56,7 @@ import { qrFinderPatternMimic } from "./qrFinderPatternMimic";
 import { pageCurlShadowDecoy } from "./pageCurlShadowDecoy";
 import { tableGridMimic } from "./tableGridMimic";
 import { checkerboardCalibrationCollision } from "./checkerboardCalibrationCollision";
+import { stereoDisparityDecoy } from "./stereoDisparityDecoy";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -117,6 +118,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   page_curl_shadow_decoy: pageCurlShadowDecoy,
   table_grid_mimic: tableGridMimic,
   checkerboard_calibration_collision: checkerboardCalibrationCollision,
+  stereo_disparity_decoy: stereoDisparityDecoy,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -178,6 +180,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "page_curl_shadow_decoy",
   "table_grid_mimic",
   "checkerboard_calibration_collision",
+  "stereo_disparity_decoy",
 ];
 
 export * from "./types";

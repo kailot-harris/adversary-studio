@@ -58,7 +58,8 @@ export type EngineId =
   | "qr_finder_pattern_mimic"
   | "page_curl_shadow_decoy"
   | "table_grid_mimic"
-  | "checkerboard_calibration_collision";
+  | "checkerboard_calibration_collision"
+  | "stereo_disparity_decoy";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
