@@ -36,7 +36,8 @@ export type EngineId =
   | "nms_overlap_flood"
   | "rolling_bayer_demosaic_jam"
   | "bbox_corner_bleed"
-  | "vignette_falloff_decoy";
+  | "vignette_falloff_decoy"
+  | "universal_patch_tile";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

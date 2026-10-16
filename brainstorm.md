@@ -134,7 +134,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `bbox_corner_bleed` — built
 - [x] `rolling_bayer_demosaic_jam` — built
 - [x] `vignette_falloff_decoy` — built
-- [ ] `universal_patch_tile`
+- [x] `universal_patch_tile` — built
 - [ ] `gradient_sign_mosaic`
 - [ ] `expression_au_jam`
 - [ ] `age_gender_attribute_decoy`
