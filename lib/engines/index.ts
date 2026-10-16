@@ -57,6 +57,7 @@ import { pageCurlShadowDecoy } from "./pageCurlShadowDecoy";
 import { tableGridMimic } from "./tableGridMimic";
 import { checkerboardCalibrationCollision } from "./checkerboardCalibrationCollision";
 import { stereoDisparityDecoy } from "./stereoDisparityDecoy";
+import { vanishingPointScramble } from "./vanishingPointScramble";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -119,6 +120,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   table_grid_mimic: tableGridMimic,
   checkerboard_calibration_collision: checkerboardCalibrationCollision,
   stereo_disparity_decoy: stereoDisparityDecoy,
+  vanishing_point_scramble: vanishingPointScramble,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -181,6 +183,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "table_grid_mimic",
   "checkerboard_calibration_collision",
   "stereo_disparity_decoy",
+  "vanishing_point_scramble",
 ];
 
 export * from "./types";
