@@ -54,6 +54,7 @@ const ENGINE_IDS: EngineId[] = [
   "pose_confidence_flood",
   "fingerprint_ridge_noise",
   "vein_pattern_jam",
+  "chroma_subsampling_bleed",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

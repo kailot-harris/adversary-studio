@@ -142,7 +142,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `pose_confidence_flood` — built
 - [x] `fingerprint_ridge_noise` — built
 - [x] `vein_pattern_jam` — built
-- [ ] `chroma_subsampling_bleed`
+- [x] `chroma_subsampling_bleed` — built
 - [ ] `keyframe_flicker_decoy`
 - [ ] `epipolar_mismatch_pattern`
 - [ ] `structure_from_motion_feature_swap`
