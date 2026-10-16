@@ -73,6 +73,7 @@ const ENGINE_IDS: EngineId[] = [
   "lens_distortion_grid_jam",
   "rig_baseline_mismatch_tile",
   "white_balance_jam",
+  "hdr_bracket_ghost",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

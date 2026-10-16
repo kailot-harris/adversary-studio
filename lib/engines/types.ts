@@ -63,7 +63,8 @@ export type EngineId =
   | "vanishing_point_scramble"
   | "lens_distortion_grid_jam"
   | "rig_baseline_mismatch_tile"
-  | "white_balance_jam";
+  | "white_balance_jam"
+  | "hdr_bracket_ghost";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

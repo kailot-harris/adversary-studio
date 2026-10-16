@@ -61,6 +61,7 @@ import { vanishingPointScramble } from "./vanishingPointScramble";
 import { lensDistortionGridJam } from "./lensDistortionGridJam";
 import { rigBaselineMismatchTile } from "./rigBaselineMismatchTile";
 import { whiteBalanceJam } from "./whiteBalanceJam";
+import { hdrBracketGhost } from "./hdrBracketGhost";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -127,6 +128,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   lens_distortion_grid_jam: lensDistortionGridJam,
   rig_baseline_mismatch_tile: rigBaselineMismatchTile,
   white_balance_jam: whiteBalanceJam,
+  hdr_bracket_ghost: hdrBracketGhost,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -193,6 +195,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "lens_distortion_grid_jam",
   "rig_baseline_mismatch_tile",
   "white_balance_jam",
+  "hdr_bracket_ghost",
 ];
 
 export * from "./types";
