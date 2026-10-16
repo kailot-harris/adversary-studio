@@ -153,7 +153,7 @@ edge/orientation filters (`gabor_grating`).
 - [ ] `doc_corner_fiducial_jam`
 - [ ] `barcode_1d_bloom`
 - [ ] `qr_finder_pattern_mimic`
-- [ ] `page_curl_shadow_decoy`
+- [x] `page_curl_shadow_decoy` — built
 - [ ] `table_grid_mimic`
 - [ ] `checkerboard_calibration_collision`
 - [ ] `stereo_disparity_decoy`
