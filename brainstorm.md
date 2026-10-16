@@ -144,7 +144,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `vein_pattern_jam` — built
 - [ ] `chroma_subsampling_bleed`
 - [ ] `keyframe_flicker_decoy`
-- [ ] `epipolar_mismatch_pattern`
+- [x] `epipolar_mismatch_pattern` — built
 - [ ] `structure_from_motion_feature_swap`
 - [ ] `jpeg_ghost_decoy`
 - [ ] `prnu_noise_mimic`
