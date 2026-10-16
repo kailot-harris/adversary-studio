@@ -159,7 +159,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `stereo_disparity_decoy` — built
 - [x] `vanishing_point_scramble` — built
 - [x] `lens_distortion_grid_jam` — built
-- [ ] `rig_baseline_mismatch_tile`
+- [x] `rig_baseline_mismatch_tile` — built
 - [ ] `white_balance_jam`
 - [ ] `hdr_bracket_ghost`
 - [ ] `color_checker_decoy`

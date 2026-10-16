@@ -61,7 +61,8 @@ export type EngineId =
   | "checkerboard_calibration_collision"
   | "stereo_disparity_decoy"
   | "vanishing_point_scramble"
-  | "lens_distortion_grid_jam";
+  | "lens_distortion_grid_jam"
+  | "rig_baseline_mismatch_tile";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

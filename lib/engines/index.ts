@@ -59,6 +59,7 @@ import { checkerboardCalibrationCollision } from "./checkerboardCalibrationColli
 import { stereoDisparityDecoy } from "./stereoDisparityDecoy";
 import { vanishingPointScramble } from "./vanishingPointScramble";
 import { lensDistortionGridJam } from "./lensDistortionGridJam";
+import { rigBaselineMismatchTile } from "./rigBaselineMismatchTile";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -123,6 +124,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   stereo_disparity_decoy: stereoDisparityDecoy,
   vanishing_point_scramble: vanishingPointScramble,
   lens_distortion_grid_jam: lensDistortionGridJam,
+  rig_baseline_mismatch_tile: rigBaselineMismatchTile,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -187,6 +189,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "stereo_disparity_decoy",
   "vanishing_point_scramble",
   "lens_distortion_grid_jam",
+  "rig_baseline_mismatch_tile",
 ];
 
 export * from "./types";
