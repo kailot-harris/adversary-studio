@@ -141,7 +141,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `vehicle_make_model_decoy` — built
 - [x] `pose_confidence_flood` — built
 - [x] `fingerprint_ridge_noise` — built
-- [ ] `vein_pattern_jam`
+- [x] `vein_pattern_jam` — built
 - [ ] `chroma_subsampling_bleed`
 - [ ] `keyframe_flicker_decoy`
 - [ ] `epipolar_mismatch_pattern`

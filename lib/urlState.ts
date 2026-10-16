@@ -53,6 +53,7 @@ const ENGINE_IDS: EngineId[] = [
   "vehicle_make_model_decoy",
   "pose_confidence_flood",
   "fingerprint_ridge_noise",
+  "vein_pattern_jam",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

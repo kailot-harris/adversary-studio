@@ -41,6 +41,7 @@ import { ageGenderAttributeDecoy } from "./ageGenderAttributeDecoy";
 import { vehicleMakeModelDecoy } from "./vehicleMakeModelDecoy";
 import { poseConfidenceFlood } from "./poseConfidenceFlood";
 import { fingerprintRidgeNoise } from "./fingerprintRidgeNoise";
+import { veinPatternJam } from "./veinPatternJam";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -87,6 +88,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   vehicle_make_model_decoy: vehicleMakeModelDecoy,
   pose_confidence_flood: poseConfidenceFlood,
   fingerprint_ridge_noise: fingerprintRidgeNoise,
+  vein_pattern_jam: veinPatternJam,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -133,6 +135,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "vehicle_make_model_decoy",
   "pose_confidence_flood",
   "fingerprint_ridge_noise",
+  "vein_pattern_jam",
 ];
 
 export * from "./types";
