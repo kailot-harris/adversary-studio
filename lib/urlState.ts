@@ -52,6 +52,7 @@ const ENGINE_IDS: EngineId[] = [
   "age_gender_attribute_decoy",
   "vehicle_make_model_decoy",
   "pose_confidence_flood",
+  "fingerprint_ridge_noise",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

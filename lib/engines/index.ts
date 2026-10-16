@@ -40,6 +40,7 @@ import { expressionAuJam } from "./expressionAuJam";
 import { ageGenderAttributeDecoy } from "./ageGenderAttributeDecoy";
 import { vehicleMakeModelDecoy } from "./vehicleMakeModelDecoy";
 import { poseConfidenceFlood } from "./poseConfidenceFlood";
+import { fingerprintRidgeNoise } from "./fingerprintRidgeNoise";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -85,6 +86,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   age_gender_attribute_decoy: ageGenderAttributeDecoy,
   vehicle_make_model_decoy: vehicleMakeModelDecoy,
   pose_confidence_flood: poseConfidenceFlood,
+  fingerprint_ridge_noise: fingerprintRidgeNoise,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -130,6 +132,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "age_gender_attribute_decoy",
   "vehicle_make_model_decoy",
   "pose_confidence_flood",
+  "fingerprint_ridge_noise",
 ];
 
 export * from "./types";

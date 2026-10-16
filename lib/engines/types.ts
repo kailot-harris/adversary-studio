@@ -42,7 +42,8 @@ export type EngineId =
   | "expression_au_jam"
   | "age_gender_attribute_decoy"
   | "vehicle_make_model_decoy"
-  | "pose_confidence_flood";
+  | "pose_confidence_flood"
+  | "fingerprint_ridge_noise";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
