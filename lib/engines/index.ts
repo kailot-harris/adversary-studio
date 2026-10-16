@@ -32,6 +32,7 @@ import { crowdCountDecoy } from "./crowdCountDecoy";
 import { actionRecognitionJitter } from "./actionRecognitionJitter";
 import { nmsOverlapFlood } from "./nmsOverlapFlood";
 import { rollingBayerDemosaicJam } from "./rollingBayerDemosaicJam";
+import { bboxCornerBleed } from "./bboxCornerBleed";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -69,6 +70,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   action_recognition_jitter: actionRecognitionJitter,
   nms_overlap_flood: nmsOverlapFlood,
   rolling_bayer_demosaic_jam: rollingBayerDemosaicJam,
+  bbox_corner_bleed: bboxCornerBleed,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -106,6 +108,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "action_recognition_jitter",
   "nms_overlap_flood",
   "rolling_bayer_demosaic_jam",
+  "bbox_corner_bleed",
 ];
 
 export * from "./types";
