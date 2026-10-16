@@ -47,6 +47,7 @@ const ENGINE_IDS: EngineId[] = [
   "bbox_corner_bleed",
   "vignette_falloff_decoy",
   "universal_patch_tile",
+  "gradient_sign_mosaic",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

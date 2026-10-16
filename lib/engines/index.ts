@@ -35,6 +35,7 @@ import { rollingBayerDemosaicJam } from "./rollingBayerDemosaicJam";
 import { bboxCornerBleed } from "./bboxCornerBleed";
 import { vignetteFalloffDecoy } from "./vignetteFalloffDecoy";
 import { universalPatchTile } from "./universalPatchTile";
+import { gradientSignMosaic } from "./gradientSignMosaic";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -75,6 +76,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   bbox_corner_bleed: bboxCornerBleed,
   vignette_falloff_decoy: vignetteFalloffDecoy,
   universal_patch_tile: universalPatchTile,
+  gradient_sign_mosaic: gradientSignMosaic,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -115,6 +117,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "bbox_corner_bleed",
   "vignette_falloff_decoy",
   "universal_patch_tile",
+  "gradient_sign_mosaic",
 ];
 
 export * from "./types";
