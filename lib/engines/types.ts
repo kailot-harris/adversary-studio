@@ -56,7 +56,8 @@ export type EngineId =
   | "doc_corner_fiducial_jam"
   | "barcode_1d_bloom"
   | "qr_finder_pattern_mimic"
-  | "page_curl_shadow_decoy";
+  | "page_curl_shadow_decoy"
+  | "table_grid_mimic";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
