@@ -50,6 +50,7 @@ const ENGINE_IDS: EngineId[] = [
   "gradient_sign_mosaic",
   "expression_au_jam",
   "age_gender_attribute_decoy",
+  "fingerprint_ridge_noise",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
