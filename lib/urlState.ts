@@ -46,6 +46,7 @@ const ENGINE_IDS: EngineId[] = [
   "rolling_bayer_demosaic_jam",
   "bbox_corner_bleed",
   "vignette_falloff_decoy",
+  "expression_au_jam",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

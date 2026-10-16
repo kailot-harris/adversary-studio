@@ -136,7 +136,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `vignette_falloff_decoy` — built
 - [ ] `universal_patch_tile`
 - [ ] `gradient_sign_mosaic`
-- [ ] `expression_au_jam`
+- [x] `expression_au_jam` — built
 - [ ] `age_gender_attribute_decoy`
 - [ ] `vehicle_make_model_decoy`
 - [ ] `pose_confidence_flood`

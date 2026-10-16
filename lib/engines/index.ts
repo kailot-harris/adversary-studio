@@ -34,6 +34,7 @@ import { nmsOverlapFlood } from "./nmsOverlapFlood";
 import { rollingBayerDemosaicJam } from "./rollingBayerDemosaicJam";
 import { bboxCornerBleed } from "./bboxCornerBleed";
 import { vignetteFalloffDecoy } from "./vignetteFalloffDecoy";
+import { expressionAuJam } from "./expressionAuJam";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -73,6 +74,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   rolling_bayer_demosaic_jam: rollingBayerDemosaicJam,
   bbox_corner_bleed: bboxCornerBleed,
   vignette_falloff_decoy: vignetteFalloffDecoy,
+  expression_au_jam: expressionAuJam,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -112,6 +114,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "rolling_bayer_demosaic_jam",
   "bbox_corner_bleed",
   "vignette_falloff_decoy",
+  "expression_au_jam",
 ];
 
 export * from "./types";
