@@ -48,6 +48,7 @@ import { epipolarMismatchPattern } from "./epipolarMismatchPattern";
 import { structureFromMotionFeatureSwap } from "./structureFromMotionFeatureSwap";
 import { jpegGhostDecoy } from "./jpegGhostDecoy";
 import { prnuNoiseMimic } from "./prnuNoiseMimic";
+import { frameInterpolationGhost } from "./frameInterpolationGhost";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -101,6 +102,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   structure_from_motion_feature_swap: structureFromMotionFeatureSwap,
   jpeg_ghost_decoy: jpegGhostDecoy,
   prnu_noise_mimic: prnuNoiseMimic,
+  frame_interpolation_ghost: frameInterpolationGhost,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -154,6 +156,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "structure_from_motion_feature_swap",
   "jpeg_ghost_decoy",
   "prnu_noise_mimic",
+  "frame_interpolation_ghost",
 ];
 
 export * from "./types";
