@@ -44,6 +44,7 @@ import { fingerprintRidgeNoise } from "./fingerprintRidgeNoise";
 import { veinPatternJam } from "./veinPatternJam";
 import { chromaSubsamplingBleed } from "./chromaSubsamplingBleed";
 import { keyframeFlickerDecoy } from "./keyframeFlickerDecoy";
+import { epipolarMismatchPattern } from "./epipolarMismatchPattern";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -93,6 +94,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   vein_pattern_jam: veinPatternJam,
   chroma_subsampling_bleed: chromaSubsamplingBleed,
   keyframe_flicker_decoy: keyframeFlickerDecoy,
+  epipolar_mismatch_pattern: epipolarMismatchPattern,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -142,6 +144,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "vein_pattern_jam",
   "chroma_subsampling_bleed",
   "keyframe_flicker_decoy",
+  "epipolar_mismatch_pattern",
 ];
 
 export * from "./types";

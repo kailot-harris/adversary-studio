@@ -46,7 +46,8 @@ export type EngineId =
   | "fingerprint_ridge_noise"
   | "vein_pattern_jam"
   | "chroma_subsampling_bleed"
-  | "keyframe_flicker_decoy";
+  | "keyframe_flicker_decoy"
+  | "epipolar_mismatch_pattern";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

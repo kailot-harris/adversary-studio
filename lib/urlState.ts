@@ -56,6 +56,7 @@ const ENGINE_IDS: EngineId[] = [
   "vein_pattern_jam",
   "chroma_subsampling_bleed",
   "keyframe_flicker_decoy",
+  "epipolar_mismatch_pattern",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
