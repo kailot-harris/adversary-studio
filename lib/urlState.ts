@@ -75,6 +75,7 @@ const ENGINE_IDS: EngineId[] = [
   "white_balance_jam",
   "hdr_bracket_ghost",
   "color_checker_decoy",
+  "exposure_metering_trap",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

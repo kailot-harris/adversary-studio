@@ -65,7 +65,8 @@ export type EngineId =
   | "rig_baseline_mismatch_tile"
   | "white_balance_jam"
   | "hdr_bracket_ghost"
-  | "color_checker_decoy";
+  | "color_checker_decoy"
+  | "exposure_metering_trap";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {

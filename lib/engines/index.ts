@@ -63,6 +63,7 @@ import { rigBaselineMismatchTile } from "./rigBaselineMismatchTile";
 import { whiteBalanceJam } from "./whiteBalanceJam";
 import { hdrBracketGhost } from "./hdrBracketGhost";
 import { colorCheckerDecoy } from "./colorCheckerDecoy";
+import { exposureMeteringTrap } from "./exposureMeteringTrap";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -131,6 +132,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   white_balance_jam: whiteBalanceJam,
   hdr_bracket_ghost: hdrBracketGhost,
   color_checker_decoy: colorCheckerDecoy,
+  exposure_metering_trap: exposureMeteringTrap,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -199,6 +201,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "white_balance_jam",
   "hdr_bracket_ghost",
   "color_checker_decoy",
+  "exposure_metering_trap",
 ];
 
 export * from "./types";
