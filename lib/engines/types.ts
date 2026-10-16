@@ -38,7 +38,8 @@ export type EngineId =
   | "bbox_corner_bleed"
   | "vignette_falloff_decoy"
   | "universal_patch_tile"
-  | "gradient_sign_mosaic";
+  | "gradient_sign_mosaic"
+  | "expression_au_jam";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
