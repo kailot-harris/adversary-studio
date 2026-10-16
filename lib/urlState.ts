@@ -70,6 +70,7 @@ const ENGINE_IDS: EngineId[] = [
   "checkerboard_calibration_collision",
   "stereo_disparity_decoy",
   "vanishing_point_scramble",
+  "hdr_bracket_ghost",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

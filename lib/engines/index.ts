@@ -58,6 +58,7 @@ import { tableGridMimic } from "./tableGridMimic";
 import { checkerboardCalibrationCollision } from "./checkerboardCalibrationCollision";
 import { stereoDisparityDecoy } from "./stereoDisparityDecoy";
 import { vanishingPointScramble } from "./vanishingPointScramble";
+import { hdrBracketGhost } from "./hdrBracketGhost";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -121,6 +122,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   checkerboard_calibration_collision: checkerboardCalibrationCollision,
   stereo_disparity_decoy: stereoDisparityDecoy,
   vanishing_point_scramble: vanishingPointScramble,
+  hdr_bracket_ghost: hdrBracketGhost,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -184,6 +186,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "checkerboard_calibration_collision",
   "stereo_disparity_decoy",
   "vanishing_point_scramble",
+  "hdr_bracket_ghost",
 ];
 
 export * from "./types";

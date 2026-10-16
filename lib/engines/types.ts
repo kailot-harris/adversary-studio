@@ -60,7 +60,8 @@ export type EngineId =
   | "table_grid_mimic"
   | "checkerboard_calibration_collision"
   | "stereo_disparity_decoy"
-  | "vanishing_point_scramble";
+  | "vanishing_point_scramble"
+  | "hdr_bracket_ghost";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
