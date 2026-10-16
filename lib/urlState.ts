@@ -59,6 +59,7 @@ const ENGINE_IDS: EngineId[] = [
   "epipolar_mismatch_pattern",
   "structure_from_motion_feature_swap",
   "jpeg_ghost_decoy",
+  "prnu_noise_mimic",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

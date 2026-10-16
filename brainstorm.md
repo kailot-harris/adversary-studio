@@ -147,7 +147,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `epipolar_mismatch_pattern` — built
 - [x] `structure_from_motion_feature_swap` — built
 - [x] `jpeg_ghost_decoy` — built
-- [ ] `prnu_noise_mimic`
+- [x] `prnu_noise_mimic` — built
 - [ ] `frame_interpolation_ghost`
 - [ ] `temporal_flicker_jam`
 - [ ] `doc_corner_fiducial_jam`

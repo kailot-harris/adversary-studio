@@ -47,6 +47,7 @@ import { keyframeFlickerDecoy } from "./keyframeFlickerDecoy";
 import { epipolarMismatchPattern } from "./epipolarMismatchPattern";
 import { structureFromMotionFeatureSwap } from "./structureFromMotionFeatureSwap";
 import { jpegGhostDecoy } from "./jpegGhostDecoy";
+import { prnuNoiseMimic } from "./prnuNoiseMimic";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -99,6 +100,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   epipolar_mismatch_pattern: epipolarMismatchPattern,
   structure_from_motion_feature_swap: structureFromMotionFeatureSwap,
   jpeg_ghost_decoy: jpegGhostDecoy,
+  prnu_noise_mimic: prnuNoiseMimic,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -151,6 +153,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "epipolar_mismatch_pattern",
   "structure_from_motion_feature_swap",
   "jpeg_ghost_decoy",
+  "prnu_noise_mimic",
 ];
 
 export * from "./types";
