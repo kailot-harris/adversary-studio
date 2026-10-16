@@ -39,6 +39,7 @@ import { gradientSignMosaic } from "./gradientSignMosaic";
 import { expressionAuJam } from "./expressionAuJam";
 import { ageGenderAttributeDecoy } from "./ageGenderAttributeDecoy";
 import { vehicleMakeModelDecoy } from "./vehicleMakeModelDecoy";
+import { poseConfidenceFlood } from "./poseConfidenceFlood";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -83,6 +84,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   expression_au_jam: expressionAuJam,
   age_gender_attribute_decoy: ageGenderAttributeDecoy,
   vehicle_make_model_decoy: vehicleMakeModelDecoy,
+  pose_confidence_flood: poseConfidenceFlood,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -127,6 +129,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "expression_au_jam",
   "age_gender_attribute_decoy",
   "vehicle_make_model_decoy",
+  "pose_confidence_flood",
 ];
 
 export * from "./types";
