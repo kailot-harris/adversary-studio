@@ -50,6 +50,7 @@ import { jpegGhostDecoy } from "./jpegGhostDecoy";
 import { prnuNoiseMimic } from "./prnuNoiseMimic";
 import { frameInterpolationGhost } from "./frameInterpolationGhost";
 import { temporalFlickerJam } from "./temporalFlickerJam";
+import { barcode1dBloom } from "./barcode1dBloom";
 import { EngineId, RenderEngine } from "./types";
 
 export const ENGINES: Record<EngineId, RenderEngine> = {
@@ -105,6 +106,7 @@ export const ENGINES: Record<EngineId, RenderEngine> = {
   prnu_noise_mimic: prnuNoiseMimic,
   frame_interpolation_ghost: frameInterpolationGhost,
   temporal_flicker_jam: temporalFlickerJam,
+  barcode_1d_bloom: barcode1dBloom,
 };
 
 export const ENGINE_ORDER: EngineId[] = [
@@ -160,6 +162,7 @@ export const ENGINE_ORDER: EngineId[] = [
   "prnu_noise_mimic",
   "frame_interpolation_ghost",
   "temporal_flicker_jam",
+  "barcode_1d_bloom",
 ];
 
 export * from "./types";
