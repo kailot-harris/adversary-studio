@@ -66,6 +66,7 @@ const ENGINE_IDS: EngineId[] = [
   "barcode_1d_bloom",
   "qr_finder_pattern_mimic",
   "page_curl_shadow_decoy",
+  "vanishing_point_scramble",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
