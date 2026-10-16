@@ -78,6 +78,7 @@ const ENGINE_IDS: EngineId[] = [
   "exposure_metering_trap",
   "tracklet_id_swap_pattern",
   "reacquisition_decoy_trail",
+  "ir_hotspot_decoy",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {

@@ -68,7 +68,8 @@ export type EngineId =
   | "color_checker_decoy"
   | "exposure_metering_trap"
   | "tracklet_id_swap_pattern"
-  | "reacquisition_decoy_trail";
+  | "reacquisition_decoy_trail"
+  | "ir_hotspot_decoy";
 
 /** Normalized 0-1 sliders shared across all engines; each engine maps them to its own ranges. */
 export interface EngineParams {
