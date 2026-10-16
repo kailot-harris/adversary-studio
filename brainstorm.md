@@ -132,7 +132,7 @@ edge/orientation filters (`gabor_grating`).
 - [x] `action_recognition_jitter` — built
 - [ ] `nms_overlap_flood`
 - [ ] `bbox_corner_bleed`
-- [ ] `rolling_bayer_demosaic_jam`
+- [x] `rolling_bayer_demosaic_jam` — built
 - [ ] `vignette_falloff_decoy`
 - [ ] `universal_patch_tile`
 - [ ] `gradient_sign_mosaic`
