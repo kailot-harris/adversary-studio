@@ -62,6 +62,7 @@ const ENGINE_IDS: EngineId[] = [
   "prnu_noise_mimic",
   "frame_interpolation_ghost",
   "temporal_flicker_jam",
+  "doc_corner_fiducial_jam",
 ];
 
 export function encodeStateToSearchParams(state: StudioState): URLSearchParams {
