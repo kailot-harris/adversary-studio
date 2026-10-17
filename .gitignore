@@ -4,3 +4,5 @@ out
 .subagent-runs
 # subagent-brief run logs (may contain sensitive output)
 /.subagent-runs/
+# internal planning/handoff docs, kept local-only now the repo is public
+/docs/
