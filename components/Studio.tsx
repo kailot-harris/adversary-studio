@@ -62,10 +62,18 @@ export default function Studio() {
     const ctx = exportCanvas.getContext("2d");
     if (!ctx) return;
     ctx.drawImage(canvas, 0, 0, EXPORT_SIZE, EXPORT_SIZE);
-    const link = document.createElement("a");
-    link.download = `adversary-${engine}-${seed.toString(16)}.png`;
-    link.href = exportCanvas.toDataURL("image/png");
-    link.click();
+
+    // toBlob + a blob: URL instead of toDataURL(): Safari/iOS unreliably
+    // honors the `download` attribute on large data: URIs (silently no-ops).
+    exportCanvas.toBlob((blob) => {
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.download = `adversary-${engine}-${seed.toString(16)}.png`;
+      link.href = url;
+      link.click();
+      URL.revokeObjectURL(url);
+    }, "image/png");
   }, [engine, seed]);
 
   const share = useCallback(() => {
